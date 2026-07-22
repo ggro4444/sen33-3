@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>森33-3行旅 | 埔里包棟民宿</title>
+    <meta name="description" content="南投埔里包棟民宿，每天只接一組客人，獨享整棟空間。低調奢華、溫暖自在的私人招待所。" />
+    
+    <!-- Google Fonts: Noto Sans TC (300,400,500,700), Noto Serif TC (400,500,600,700), Klee One (400,600) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Preload hero image for fast LCP -->
+    <link rel="preload" as="image" href="/hero.webp" fetchpriority="high">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Noto Sans TC"', 'sans-serif'],
+              serif: ['"Noto Serif TC"', 'serif'],
+              handwriting: ['"Klee One"', 'cursive'],
+            },
+            colors: {
+              warm: {
+                bg: '#FDF5E6',
+                text: '#6B4226',
+                gold: '#C4A35A',
+                sage: '#9CAF88',
+                dark: '#2C1E16'
+              }
+            },
+            boxShadow: {
+              'warm': '0 1px 2px rgba(107, 66, 38, 0.04), 0 2px 4px rgba(107, 66, 38, 0.04), 0 4px 8px rgba(107, 66, 38, 0.04), 0 8px 16px rgba(107, 66, 38, 0.04)',
+              'warm-sm': '0 1px 2px rgba(107, 66, 38, 0.04), 0 2px 4px rgba(107, 66, 38, 0.03)',
+              'warm-lg': '0 2px 4px rgba(107, 66, 38, 0.06), 0 4px 8px rgba(107, 66, 38, 0.06), 0 8px 16px rgba(107, 66, 38, 0.06), 0 16px 32px rgba(107, 66, 38, 0.05)',
+              'card': '0 0 0 1px rgba(107, 66, 38, 0.08), 0 1px 2px rgba(107, 66, 38, 0.04), 0 4px 8px rgba(107, 66, 38, 0.04)',
+              'btn': 'inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 2px 4px rgba(107, 66, 38, 0.1)',
+              'btn-hover': 'inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 8px rgba(107, 66, 38, 0.15)'
+            }
+          }
+        }
+      }
+    </script>
+
+        <style>
+      body {
+        background: linear-gradient(180deg, #FDF5E6 0%, #FDF7ED 50%, #FDF5E6 100%);
+        color: #6B4226; /* warm-text */
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+      }
+      /* Hide scrollbar for cleaner look in galleries */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* === 強制字體回退 — 不依賴 Tailwind CDN runtime === */
+      /* 確保即使在 JS 尚未執行或 Google Fonts 載入失敗時，字體仍正確顯示 */
+      body, .font-sans, [class*="font-sans"] {
+        font-family: 'Noto Sans TC', -apple-system, 'Microsoft JhengHei', 'PingFang TC', 'Heiti TC', sans-serif;
+      }
+      .font-serif, [class*="font-serif"], h1, h2, h3, h4 {
+        font-family: 'Noto Serif TC', 'PMingLiU', 'Songti TC', 'Noto Serif', serif;
+      }
+      .font-handwriting, [class*="font-handwriting"] {
+        font-family: 'Klee One', 'Microsoft JhengHei', 'PingFang TC', cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+</body>
+</html>
