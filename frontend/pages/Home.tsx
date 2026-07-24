@@ -115,7 +115,7 @@ export const Home: React.FC = () => {
                   給親愛的旅人：
                 </h2>
                 
-                <div className="space-y-5 text-warm-text/80 leading-[1.8] tracking-[0.2em] text-lg font-handwriting pl-4 md:pl-8 border-l border-warm-gold/20">
+                <div className="space-y-5 text-warm-text/80 leading-[1.8] tracking-[0.2em] text-base font-handwriting pl-4 md:pl-8 border-l border-warm-gold/20">
                   {/* Always visible */}
                   <p className="font-bold text-warm-text/90 text-xl md:text-2xl">
                     把時間，留給彼此<br/>
@@ -190,7 +190,7 @@ export const Home: React.FC = () => {
                     </div>
                   )}
                   <div className="flex flex-col items-center text-center px-4">
-                    <h3 className="font-serif font-medium text-2xl md:text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
+                    <h3 className="font-serif font-light md:font-medium text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
                     <div className="w-8 h-[1px] bg-warm-gold/30 mb-4"></div>
                     <p className="text-warm-text/80 leading-[1.8] text-base md:text-lg tracking-[0.15em] font-normal flex-grow">
                       {facility.description}
@@ -218,7 +218,7 @@ export const Home: React.FC = () => {
                       </div>
                     )}
                     <div className="flex flex-col items-center text-center px-4">
-                      <h3 className="font-serif font-medium text-2xl md:text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
+                      <h3 className="font-serif font-light md:font-medium text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
                       <div className="w-8 h-[1px] bg-warm-gold/30 mb-4"></div>
                       <p className="text-warm-text/80 leading-[1.8] text-base md:text-lg tracking-[0.15em] font-normal flex-grow">
                         {facility.description}
@@ -236,14 +236,14 @@ export const Home: React.FC = () => {
               <div className="flex items-start gap-5 hover:-translate-y-[2px] transition-all duration-500 ease-out justify-center">
                 <div className="text-warm-gold mt-1"><ArrowUpDown size={28} strokeWidth={1.5} /></div>
                 <div>
-                  <h4 className="font-serif font-light md:font-medium text-warm-text text-3xl md:text-3xl tracking-[0.15em] mb-2">室內電梯</h4>
+                  <h4 className="font-serif font-light md:font-medium text-3xl text-warm-text tracking-[0.15em] mb-2">室內電梯</h4>
                   <p className="text-warm-text/75 text-lg tracking-[0.15em] font-normal">方便長輩和行李</p>
                 </div>
               </div>
               <div className="flex items-start gap-5 hover:-translate-y-[2px] transition-all duration-500 ease-out justify-center">
                 <div className="text-warm-gold mt-1"><CloudSun size={28} strokeWidth={1.5} /></div>
                 <div>
-                  <h4 className="font-serif font-light md:font-medium text-warm-text text-3xl md:text-3xl tracking-[0.15em] mb-2">露天陽臺</h4>
+                  <h4 className="font-serif font-light md:font-medium text-3xl text-warm-text tracking-[0.15em] mb-2">露天陽臺</h4>
                   <p className="text-warm-text/75 text-lg tracking-[0.15em] font-normal">清晨看山嵐、夜晚觀星空</p>
                 </div>
               </div>
