@@ -1,21 +1,30 @@
-import React from 'react';
+import { lazy, Suspense } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
-import { Home } from './pages/Home';
-import { Rooms } from './pages/Rooms';
-import { Rules } from './pages/Rules';
-import { FAQ } from './pages/FAQ';
+
+const Home = lazy(() => import('./pages/Home'));
+const Rooms = lazy(() => import('./pages/Rooms'));
+const Rules = lazy(() => import('./pages/Rules'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-warm-bg">
+    <div className="text-warm-text/40 text-lg tracking-[0.2em]">載入中...</div>
+  </div>
+);
 
 const App: React.FC = () => {
   return (
     <HashRouter>
       <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/rooms" element={<Rooms />} />
-          <Route path="/rules" element={<Rules />} />
-          <Route path="/faq" element={<FAQ />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/rooms" element={<Rooms />} />
+            <Route path="/rules" element={<Rules />} />
+            <Route path="/faq" element={<FAQ />} />
+          </Routes>
+        </Suspense>
       </Layout>
     </HashRouter>
   );

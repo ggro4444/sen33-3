@@ -14,37 +14,7 @@
     <!-- Preload hero image for fast LCP -->
     <link rel="preload" as="image" href="/hero.webp" fetchpriority="high">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Noto Sans TC"', 'sans-serif'],
-              serif: ['"Noto Serif TC"', 'serif'],
-              handwriting: ['"Klee One"', 'cursive'],
-            },
-            colors: {
-              warm: {
-                bg: '#FDF5E6',
-                text: '#6B4226',
-                gold: '#C4A35A',
-                sage: '#9CAF88',
-                dark: '#2C1E16'
-              }
-            },
-            boxShadow: {
-              'warm': '0 1px 2px rgba(107, 66, 38, 0.04), 0 2px 4px rgba(107, 66, 38, 0.04), 0 4px 8px rgba(107, 66, 38, 0.04), 0 8px 16px rgba(107, 66, 38, 0.04)',
-              'warm-sm': '0 1px 2px rgba(107, 66, 38, 0.04), 0 2px 4px rgba(107, 66, 38, 0.03)',
-              'warm-lg': '0 2px 4px rgba(107, 66, 38, 0.06), 0 4px 8px rgba(107, 66, 38, 0.06), 0 8px 16px rgba(107, 66, 38, 0.06), 0 16px 32px rgba(107, 66, 38, 0.05)',
-              'card': '0 0 0 1px rgba(107, 66, 38, 0.08), 0 1px 2px rgba(107, 66, 38, 0.04), 0 4px 8px rgba(107, 66, 38, 0.04)',
-              'btn': 'inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 2px 4px rgba(107, 66, 38, 0.1)',
-              'btn-hover': 'inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 8px rgba(107, 66, 38, 0.15)'
-            }
-          }
-        }
-      }
-    </script>
+    <!-- Tailwind CSS 由 Vite build-time 注入，無 CDN runtime -->
 
         <style>
       body {
