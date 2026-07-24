@@ -46,5 +46,49 @@
   <body>
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
-</body>
+    <!-- 🔴 診斷用 — 測試完會移除 -->
+    <script>
+      setTimeout(() => {
+        const h1 = document.querySelector('h1');
+        const testEl = document.createElement('div');
+        testEl.style.cssText = 'font-family:"Songti TC";position:absolute;visibility:hidden';
+        document.body.appendChild(testEl);
+        const hasSongtiTC = getComputedStyle(testEl).fontFamily.includes('Songti');
+        testEl.remove();
+
+        const testEl2 = document.createElement('div');
+        testEl2.style.cssText = 'font-family:SerifSystem;position:absolute;visibility:hidden';
+        document.body.appendChild(testEl2);
+        const serifSystemResolves = getComputedStyle(testEl2).fontFamily;
+        testEl2.remove();
+
+        const testEl3 = document.createElement('div');
+        testEl3.style.cssText = 'font-family:ui-serif;position:absolute;visibility:hidden';
+        document.body.appendChild(testEl3);
+        const uiSerifResolves = getComputedStyle(testEl3).fontFamily;
+        testEl3.remove();
+
+        const info = h1 
+          ? 'H1 computed: ' + getComputedStyle(h1).fontFamily
+          : 'H1 not found';
+        
+        const banner = document.createElement('div');
+        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#000;color:#0f0;font:12px monospace;padding:8px;white-space:pre-wrap;max-height:50vh;overflow:auto';
+        banner.textContent = [
+          '🔴 DIAGNOSTIC (load & screenshot this)',
+          '',
+          info,
+          '',
+          'Songti TC available? ' + (hasSongtiTC ? 'YES ✅' : 'NO ❌'),
+          '',
+          'SerifSystem resolves to: ' + serifSystemResolves,
+          '',
+          'ui-serif resolves to: ' + uiSerifResolves,
+          '',
+          'UA: ' + navigator.userAgent,
+        ].join('\n');
+        document.body.prepend(banner);
+      }, 3000);
+    </script>
+  </body>
 </html>
