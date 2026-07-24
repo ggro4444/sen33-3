@@ -31,9 +31,9 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="font-serif font-normal text-4xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-10 leading-[1.4]"
+            className="font-serif font-normal text-2xl sm:text-3xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-6 sm:mb-10 leading-[1.5]"
           >
-            整棟都是你們的，<br className="md:hidden" />自在就好
+            整棟都是你們的，<br />自在就好
           </motion.h1>
           
           <motion.div
@@ -43,8 +43,11 @@ export const Home: React.FC = () => {
             className="flex items-center gap-6"
           >
             <div className="w-12 md:w-24 h-[1px] bg-white/50"></div>
-            <p className="text-xl md:text-2xl tracking-[0.3em] font-light text-white/90">
-              南投埔里 · 專屬包棟行旅
+            <p className="text-base sm:text-xl md:text-2xl tracking-[0.3em] font-light text-white/90">
+              <span>南投埔里</span>
+              <span className="hidden sm:inline"> · </span>
+              <br className="sm:hidden" />
+              <span>專屬包棟行旅</span>
             </p>
             <div className="w-12 md:w-24 h-[1px] bg-white/50"></div>
           </motion.div>
@@ -54,7 +57,7 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.4 }}
-            className="flex flex-col sm:flex-row gap-6 mt-16 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-10 sm:mt-16 w-full sm:w-auto"
           >
             <Link
               to="/rooms"
@@ -78,7 +81,7 @@ export const Home: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
         >
           <span className="text-white/75 text-xs tracking-[0.3em] mb-4 font-medium">SCROLL</span>
           <div className="w-[1px] h-16 bg-white/20 overflow-hidden relative">
@@ -275,15 +278,15 @@ export const Home: React.FC = () => {
               {/* Right Column: Google Maps */}
               <div className="w-full flex flex-col">
                 <div className="mb-8">
-                  <h3 className="font-serif font-semibold text-2xl text-warm-text tracking-[0.15em] mb-3 flex items-center gap-3">
-                    <MapPin size={24} className="text-warm-gold" strokeWidth={1.5} />
-                    森33-3行旅  我們在這裡～
+                  <h3 className="font-serif font-semibold text-lg sm:text-2xl text-warm-text tracking-[0.15em] mb-3 flex items-center gap-2 sm:gap-3">
+                    <MapPin size={20} className="text-warm-gold shrink-0" strokeWidth={1.5} />
+                    <span>森33-3行旅  我們在這裡～</span>
                   </h3>
                   <a 
-                    href="https://maps.app.goo.gl/zBKube511tn93sPL8" 
+                    href="https://maps.app.goo.gl/NKrjpLzvarseNNjW7?g_st=ic" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-warm-text/75 tracking-[0.15em] font-normal pl-9 hover:text-warm-gold transition-colors group active:scale-[0.98]"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm text-warm-text/75 tracking-[0.15em] font-normal pl-6 sm:pl-9 hover:text-warm-gold transition-colors group active:scale-[0.98]"
                   >
                     Google 導航請直接點擊「<span className="font-semibold text-warm-text group-hover:text-warm-gold transition-colors">森33-3行旅</span>」
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
