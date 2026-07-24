@@ -32,7 +32,7 @@ const RoomSection: React.FC<{ room: any; reverse: boolean }> = ({ room, reverse 
 
   return (
     <AnimatedSection>
-      <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-16 lg:gap-24 items-center`}>
+      <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-24 items-center`}>
         
         {/* Image Gallery */}
         <div className="w-full lg:w-7/12">
@@ -64,9 +64,9 @@ const RoomSection: React.FC<{ room: any; reverse: boolean }> = ({ room, reverse 
 
         {/* Room Details */}
         <div className="w-full lg:w-5/12 flex flex-col justify-center">
-          <h2 className="font-serif font-semibold text-4xl md:text-5xl text-warm-text tracking-[0.2em] mb-8">{room.name}</h2>
+          <h2 className="font-serif font-semibold text-3xl md:text-5xl text-warm-text tracking-[0.2em] mb-8">{room.name}</h2>
           
-          <div className="flex flex-col gap-4 mb-12 text-warm-text/90 text-lg tracking-[0.15em] font-normal">
+          <div className="flex flex-col gap-4 mb-6 md:mb-12 text-warm-text/90 text-lg tracking-[0.15em] font-normal">
             <div className="flex items-center gap-4 border-b border-warm-text/10 pb-4">
               <span className="text-sm font-medium text-warm-text/60 w-40 uppercase tracking-widest">
                 CAPACITY <span className="text-sm font-medium tracking-normal ml-1">(人數)</span>
