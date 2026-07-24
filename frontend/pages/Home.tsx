@@ -31,7 +31,7 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="font-serif font-normal text-4xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-10 leading-[1.4]"
+            className="font-serif font-normal text-4xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-10 leading-[1.6]"
           >
             整棟都是你們的<br />自在就好
           </motion.h1>
@@ -115,7 +115,7 @@ export const Home: React.FC = () => {
                   給親愛的旅人：
                 </h2>
                 
-                <div className="space-y-5 text-warm-text/80 leading-[1.8] tracking-[0.2em] text-base font-handwriting pl-4 md:pl-8 border-l border-warm-gold/20">
+                <div className="space-y-5 text-warm-text/80 leading-[1.8] tracking-[0.2em] text-base md:text-lg font-handwriting pl-4 md:pl-8 border-l border-warm-gold/20">
                   {/* Always visible */}
                   <p className="font-bold text-warm-text/90 text-xl md:text-2xl">
                     把時間，留給彼此<br/>
@@ -191,7 +191,7 @@ export const Home: React.FC = () => {
                   )}
                   <div className="flex flex-col items-center text-center px-4">
                     <h3 className="font-serif font-light md:font-medium text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
-                    <div className="w-8 h-[1px] bg-warm-gold/30 mb-4"></div>
+                    <div className="w-24 h-[1px] bg-warm-gold/30 mb-4"></div>
                     <p className="text-warm-text/80 leading-[1.8] text-base md:text-lg tracking-[0.15em] font-normal flex-grow">
                       {facility.description}
                     </p>
@@ -219,7 +219,7 @@ export const Home: React.FC = () => {
                     )}
                     <div className="flex flex-col items-center text-center px-4">
                       <h3 className="font-serif font-light md:font-medium text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
-                      <div className="w-8 h-[1px] bg-warm-gold/30 mb-4"></div>
+                      <div className="w-24 h-[1px] bg-warm-gold/30 mb-4"></div>
                       <p className="text-warm-text/80 leading-[1.8] text-base md:text-lg tracking-[0.15em] font-normal flex-grow">
                         {facility.description}
                       </p>
@@ -233,19 +233,13 @@ export const Home: React.FC = () => {
           {/* Additional Facilities List (Text Only) */}
           <AnimatedSection delay={0.4}>
             <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto border-t border-warm-text/10 pt-16">
-              <div className="flex items-start gap-5 hover:-translate-y-[2px] transition-all duration-500 ease-out justify-center">
-                <div className="text-warm-gold mt-1"><ArrowUpDown size={28} strokeWidth={1.5} /></div>
-                <div>
-                  <h4 className="font-serif font-light md:font-medium text-3xl text-warm-text tracking-[0.15em] mb-2">室內電梯</h4>
-                  <p className="text-warm-text/75 text-lg tracking-[0.15em] font-normal">方便長輩和行李</p>
-                </div>
+              <div className="text-center hover:-translate-y-[2px] transition-all duration-500 ease-out">
+                <h4 className="font-serif font-light md:font-medium text-3xl text-warm-text tracking-[0.15em] mb-2 inline-flex items-center gap-2"><ArrowUpDown size={24} strokeWidth={1.5} className="text-warm-gold" /> 室內電梯</h4>
+                <p className="text-warm-text/75 text-lg tracking-[0.15em] font-normal">方便長輩和行李</p>
               </div>
-              <div className="flex items-start gap-5 hover:-translate-y-[2px] transition-all duration-500 ease-out justify-center">
-                <div className="text-warm-gold mt-1"><CloudSun size={28} strokeWidth={1.5} /></div>
-                <div>
-                  <h4 className="font-serif font-light md:font-medium text-3xl text-warm-text tracking-[0.15em] mb-2">露天陽臺</h4>
-                  <p className="text-warm-text/75 text-lg tracking-[0.15em] font-normal">清晨看山嵐、夜晚觀星空</p>
-                </div>
+              <div className="text-center hover:-translate-y-[2px] transition-all duration-500 ease-out">
+                <h4 className="font-serif font-light md:font-medium text-3xl text-warm-text tracking-[0.15em] mb-2 inline-flex items-center gap-2"><CloudSun size={24} strokeWidth={1.5} className="text-warm-gold" /> 露天陽臺</h4>
+                <p className="text-warm-text/75 text-lg tracking-[0.15em] font-normal">清晨看山嵐、夜晚觀星空</p>
               </div>
             </div>
           </AnimatedSection>
