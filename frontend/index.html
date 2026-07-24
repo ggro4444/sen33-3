@@ -5,23 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>森33-3行旅 | 埔里包棟民宿</title>
     <meta name="description" content="南投埔里包棟民宿，每天只接一組客人，獨享整棟空間。低調奢華、溫暖自在的私人招待所。" />
-    
-    <!-- Google Fonts: Noto Sans TC (300,400,500,700), Noto Serif TC (400,500,600,700), Klee One (400,600) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Preload hero image for fast LCP -->
     <link rel="preload" as="image" href="/hero.webp" fetchpriority="high">
 
-    <!-- Tailwind CSS 由 Vite build-time 注入，無 CDN runtime -->
-
-        <style>
+    <!-- 全站系統字體 — 無外部依賴，永遠不會載入失敗 -->
+    <style>
       body {
         background: linear-gradient(180deg, #FDF5E6 0%, #FDF7ED 50%, #FDF5E6 100%);
-        color: #6B4226; /* warm-text */
+        color: #6B4226;
         -webkit-font-smoothing: antialiased;
         min-height: 100vh;
+        /* 內文：系統無襯線體 */
+        font-family: 'PingFang TC', 'Microsoft JhengHei', -apple-system, 'Heiti TC', sans-serif;
       }
       /* Hide scrollbar for cleaner look in galleries */
       .no-scrollbar::-webkit-scrollbar {
@@ -32,16 +28,16 @@
         scrollbar-width: none;
       }
 
-      /* === 強制字體回退 — 不依賴 Tailwind CDN runtime === */
-      /* 確保即使在 JS 尚未執行或 Google Fonts 載入失敗時，字體仍正確顯示 */
-      body, .font-sans, [class*="font-sans"] {
-        font-family: 'Noto Sans TC', -apple-system, 'Microsoft JhengHei', 'PingFang TC', 'Heiti TC', sans-serif;
+      /* 標題 / 裝飾文字：系統襯線體（宋體） */
+      /* iOS: Songti TC → Android: Noto Serif → Windows: PMingLiU */
+      h1, h2, h3, h4, h5, h6,
+      .font-serif, [class*="font-serif"] {
+        font-family: 'Songti TC', 'PMingLiU', 'Noto Serif', 'Noto Serif TC', serif !important;
       }
-      .font-serif, [class*="font-serif"], h1, h2, h3, h4 {
-        font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', 'Noto Serif', serif !important;
-      }
+
+      /* 手寫風格 fallback → 系統襯線體 */
       .font-handwriting, [class*="font-handwriting"] {
-        font-family: 'Klee One', 'Songti TC', 'PingFang TC', cursive !important;
+        font-family: 'Songti TC', 'PMingLiU', 'Noto Serif', serif !important;
       }
     </style>
   </head>

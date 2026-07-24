@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Noto Sans TC"', 'sans-serif'],
-        serif: ['"Noto Serif TC"', '"Songti TC"', '"PMingLiU"', '"Noto Serif"', 'serif'],
-        handwriting: ['"Klee One"', '"Songti TC"', '"PingFang TC"', 'cursive'],
+        sans: ['"PingFang TC"', '"Microsoft JhengHei"', '-apple-system', '"Heiti TC"', 'sans-serif'],
+        serif: ['"Songti TC"', '"PMingLiU"', '"Noto Serif"', 'serif'],
+        handwriting: ['"Songti TC"', '"PMingLiU"', '"Noto Serif"', 'serif'],
       },
       colors: {
         warm: {
