@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpDown, LayoutGrid, TreePine, CloudSun, MapPin } from 'lucide-react';
@@ -6,6 +6,7 @@ import { AnimatedSection } from '../components/AnimatedSection';
 import { HERO_IMAGE, FACILITIES, ATTRACTIONS, CONTACT_INFO } from '../constants';
 
 export const Home: React.FC = () => {
+  useEffect(() => { document.title = '森33-3行旅 | 埔里包棟民宿'; }, []);
   const [isLetterExpanded, setIsLetterExpanded] = useState(false);
 
   return (

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!--
+    Note: This site uses HashRouter (#/pages).
+    Google ignores URL fragments, so only the root URL is listed.
+    All content is discoverable from the homepage SPA.
+    When switching to custom domain, update the hostname below.
+  -->
+  <url>
+    <loc>https://sen33-3.pages.dev/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

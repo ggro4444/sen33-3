@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { ROOMS } from '../constants';
 
 export const Rooms: React.FC = () => {
+  useEffect(() => { document.title = '房型介紹 | 森33-3行旅'; }, []);
   return (
     <div className="pt-40 pb-32 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
@@ -39,7 +40,7 @@ const RoomSection: React.FC<{ room: any; reverse: boolean }> = ({ room, reverse 
           <div className="aspect-[4/3] overflow-hidden mb-6 relative bg-warm-text/5 shadow-card rounded-md">
             <img 
               src={room.images[activeImg]} 
-              alt={`${room.name} view`}
+              alt={`${room.name} 照片`}
               className="w-full h-full object-cover transition-opacity duration-700"
               loading="lazy"
               decoding="async"
@@ -55,7 +56,7 @@ const RoomSection: React.FC<{ room: any; reverse: boolean }> = ({ room, reverse 
                   activeImg === idx ? 'opacity-100 ring-2 ring-warm-gold/60 ring-offset-4 ring-offset-warm-bg' : 'opacity-60 hover:opacity-100'
                 }`}
               >
-                <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                <img src={img} alt={`${room.name} 照片 ${idx + 1}`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
               </button>
             ))}
             </div>

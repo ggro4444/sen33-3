@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { AlertCircle } from 'lucide-react';
 
 export const Rules: React.FC = () => {
+  useEffect(() => { document.title = '住宿規範 | 森33-3行旅'; }, []);
   return (
     <div className="pt-40 pb-32 bg-transparent min-h-screen">
       <div className="max-w-4xl mx-auto px-6">

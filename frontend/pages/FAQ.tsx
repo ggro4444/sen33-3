@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { FAQS } from '../constants';
 
 export const FAQ: React.FC = () => {
+  useEffect(() => { document.title = '常見問題 | 森33-3行旅'; }, []);
   return (
     <div className="pt-40 pb-32 bg-transparent min-h-screen">
       <div className="max-w-3xl mx-auto px-6">
