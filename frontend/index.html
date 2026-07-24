@@ -9,35 +9,37 @@
     <!-- Preload hero image for fast LCP -->
     <link rel="preload" as="image" href="/hero.webp" fetchpriority="high">
 
-    <!-- 全站系統字體 — 無外部依賴，永遠不會載入失敗 -->
     <style>
+      /* === 系統字體綁定 — @font-face local() 直接對接系統，不走任何網路請求 === */
+      @font-face {
+        font-family: 'SerifSystem';
+        src: local('Songti TC'), local('STSongti-TC'), local('PMingLiU'), local('Noto Serif');
+      }
+      @font-face {
+        font-family: 'SansSystem';
+        src: local('PingFang TC'), local('Microsoft JhengHei'), local('Heiti TC');
+      }
+
       body {
         background: linear-gradient(180deg, #FDF5E6 0%, #FDF7ED 50%, #FDF5E6 100%);
         color: #6B4226;
         -webkit-font-smoothing: antialiased;
         min-height: 100vh;
-        /* 內文：系統無襯線體 */
-        font-family: 'PingFang TC', 'Microsoft JhengHei', -apple-system, 'Heiti TC', sans-serif;
-      }
-      /* Hide scrollbar for cleaner look in galleries */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+        font-family: 'SansSystem', -apple-system, sans-serif;
       }
 
-      /* 標題 / 裝飾文字：系統襯線體（宋體） */
-      /* iOS: Songti TC → Android: Noto Serif → Windows: PMingLiU */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* 所有標題 + .font-serif → 系統宋體 */
       h1, h2, h3, h4, h5, h6,
       .font-serif, [class*="font-serif"] {
-        font-family: 'Songti TC', 'PMingLiU', 'Noto Serif', 'Noto Serif TC', serif !important;
+        font-family: 'SerifSystem', serif !important;
       }
 
-      /* 手寫風格 fallback → 系統襯線體 */
+      /* .font-handwriting → 同宋體（無系統手寫體） */
       .font-handwriting, [class*="font-handwriting"] {
-        font-family: 'Songti TC', 'PMingLiU', 'Noto Serif', serif !important;
+        font-family: 'SerifSystem', serif !important;
       }
     </style>
   </head>

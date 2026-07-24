@@ -6,11 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['"PingFang TC"', '"Microsoft JhengHei"', '-apple-system', '"Heiti TC"', 'sans-serif'],
-        serif: ['"Songti TC"', '"PMingLiU"', '"Noto Serif"', 'serif'],
-        handwriting: ['"Songti TC"', '"PMingLiU"', '"Noto Serif"', 'serif'],
-      },
       colors: {
         warm: {
           bg: '#FDF5E6',
