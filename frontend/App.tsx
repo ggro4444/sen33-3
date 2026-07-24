@@ -2,10 +2,10 @@ import { lazy, Suspense } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 
-const Home = lazy(() => import('./pages/Home'));
-const Rooms = lazy(() => import('./pages/Rooms'));
-const Rules = lazy(() => import('./pages/Rules'));
-const FAQ = lazy(() => import('./pages/FAQ'));
+const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
+const Rooms = lazy(() => import('./pages/Rooms').then(m => ({ default: m.Rooms })));
+const Rules = lazy(() => import('./pages/Rules').then(m => ({ default: m.Rules })));
+const FAQ = lazy(() => import('./pages/FAQ').then(m => ({ default: m.FAQ })));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-warm-bg">
