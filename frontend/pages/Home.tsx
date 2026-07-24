@@ -31,7 +31,7 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="font-serif font-normal text-3xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-6 sm:mb-10 leading-[1.7]"
+            className="font-serif font-light md:font-normal text-4xl md:text-6xl lg:text-7xl tracking-[0.1em] mb-6 sm:mb-10 !leading-[1.7] md:!leading-[1.8]"
           >
             整棟都是你們的<br />自在就好
           </motion.h1>
@@ -115,7 +115,7 @@ export const Home: React.FC = () => {
                   給親愛的旅人：
                 </h2>
                 
-                <div className="space-y-10 text-warm-text/80 leading-[2.5] tracking-[0.2em] text-lg md:text-xl font-handwriting pl-4 md:pl-8 border-l border-warm-gold/20">
+                <div className="space-y-5 text-warm-text/80 leading-[1.8] tracking-[0.2em] text-base font-handwriting pl-4 md:pl-8 border-l border-warm-gold/20">
                   {/* Always visible */}
                   <p className="font-bold text-warm-text/90 text-xl md:text-2xl">
                     把時間，留給彼此<br/>
@@ -123,7 +123,7 @@ export const Home: React.FC = () => {
                   </p>
 
                   {/* Collapsible: hidden on mobile when collapsed, always visible on desktop */}
-                  <div className={`${!isLetterExpanded ? 'hidden' : 'block'} md:block space-y-10`}>
+                  <div className={`${!isLetterExpanded ? 'hidden' : 'block'} md:block space-y-5`}>
                     <p>
                       我是 Betty，歡迎來到森３３－３行旅。這裡沒有城市的匆忙，只有陽光、微風、綠意，和屬於你們的慢慢生活。
                     </p>
@@ -233,14 +233,14 @@ export const Home: React.FC = () => {
           {/* Additional Facilities List (Text Only) */}
           <AnimatedSection delay={0.4}>
             <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto border-t border-warm-text/10 pt-16">
-              <div className="flex items-start gap-5 hover:-translate-y-[2px] transition-all duration-500 ease-out">
+              <div className="flex items-start gap-5 hover:-translate-y-[2px] transition-all duration-500 ease-out justify-center md:justify-start">
                 <div className="text-warm-gold mt-1"><ArrowUpDown size={28} strokeWidth={1.5} /></div>
                 <div>
                   <h4 className="font-serif font-medium text-warm-text text-2xl md:text-3xl tracking-[0.15em] mb-2">室內電梯</h4>
                   <p className="text-warm-text/75 text-lg tracking-[0.15em] font-normal">方便長輩和行李</p>
                 </div>
               </div>
-              <div className="flex items-start gap-5 hover:-translate-y-[2px] transition-all duration-500 ease-out">
+              <div className="flex items-start gap-5 hover:-translate-y-[2px] transition-all duration-500 ease-out justify-center md:justify-start">
                 <div className="text-warm-gold mt-1"><CloudSun size={28} strokeWidth={1.5} /></div>
                 <div>
                   <h4 className="font-serif font-medium text-warm-text text-2xl md:text-3xl tracking-[0.15em] mb-2">露天陽臺</h4>
