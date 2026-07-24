@@ -31,7 +31,7 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="font-serif font-light md:font-normal text-4xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-10 leading-[3]"
+            className="font-serif font-light md:font-normal text-4xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-10 leading-[1.4] md:!leading-[3]"
           >
             整棟都是你們的<br />自在就好
           </motion.h1>
