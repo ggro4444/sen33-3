@@ -9,15 +9,16 @@
     <!-- Preload hero image for fast LCP -->
     <link rel="preload" as="image" href="/hero.webp" fetchpriority="high">
 
+    <!-- Google Fonts: Noto Serif TC (標題) + Klee One (手寫區) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
-      /* === 系統字體綁定 — @font-face local() 直接對接系統，不走任何網路請求 === */
+      /* 系統字體 fallback（萬一 Google Fonts 暫時未載入） */
       @font-face {
-        font-family: 'SerifSystem';
-        src: local('Songti TC'), local('STSongti-TC'), local('PMingLiU'), local('Noto Serif');
-      }
-      @font-face {
-        font-family: 'SansSystem';
-        src: local('PingFang TC'), local('Microsoft JhengHei'), local('Heiti TC');
+        font-family: 'SerifFallback';
+        src: local('Songti TC'), local('PMingLiU'), local('Noto Serif');
       }
 
       body {
@@ -25,70 +26,26 @@
         color: #6B4226;
         -webkit-font-smoothing: antialiased;
         min-height: 100vh;
-        font-family: 'SansSystem', -apple-system, sans-serif;
+        font-family: 'PingFang TC', 'Microsoft JhengHei', -apple-system, sans-serif;
       }
 
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-      /* 所有標題 + .font-serif → 系統宋體 */
+      /* 標題 → Noto Serif TC（載入後），SerifFallback（載入前） */
       h1, h2, h3, h4, h5, h6,
       .font-serif, [class*="font-serif"] {
-        font-family: 'SerifSystem', serif !important;
+        font-family: 'Noto Serif TC', 'SerifFallback', serif !important;
       }
 
-      /* .font-handwriting → 同宋體（無系統手寫體） */
+      /* 手寫區 → Klee One（載入後），SerifFallback（載入前） */
       .font-handwriting, [class*="font-handwriting"] {
-        font-family: 'SerifSystem', serif !important;
+        font-family: 'Klee One', 'SerifFallback', cursive !important;
       }
     </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
-    <!-- 🔴 診斷用 — 測試完會移除 -->
-    <script>
-      setTimeout(() => {
-        const h1 = document.querySelector('h1');
-        const testEl = document.createElement('div');
-        testEl.style.cssText = 'font-family:"Songti TC";position:absolute;visibility:hidden';
-        document.body.appendChild(testEl);
-        const hasSongtiTC = getComputedStyle(testEl).fontFamily.includes('Songti');
-        testEl.remove();
-
-        const testEl2 = document.createElement('div');
-        testEl2.style.cssText = 'font-family:SerifSystem;position:absolute;visibility:hidden';
-        document.body.appendChild(testEl2);
-        const serifSystemResolves = getComputedStyle(testEl2).fontFamily;
-        testEl2.remove();
-
-        const testEl3 = document.createElement('div');
-        testEl3.style.cssText = 'font-family:ui-serif;position:absolute;visibility:hidden';
-        document.body.appendChild(testEl3);
-        const uiSerifResolves = getComputedStyle(testEl3).fontFamily;
-        testEl3.remove();
-
-        const info = h1 
-          ? 'H1 computed: ' + getComputedStyle(h1).fontFamily
-          : 'H1 not found';
-        
-        const banner = document.createElement('div');
-        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#000;color:#0f0;font:12px monospace;padding:8px;white-space:pre-wrap;max-height:50vh;overflow:auto';
-        banner.textContent = [
-          '🔴 DIAGNOSTIC (load & screenshot this)',
-          '',
-          info,
-          '',
-          'Songti TC available? ' + (hasSongtiTC ? 'YES ✅' : 'NO ❌'),
-          '',
-          'SerifSystem resolves to: ' + serifSystemResolves,
-          '',
-          'ui-serif resolves to: ' + uiSerifResolves,
-          '',
-          'UA: ' + navigator.userAgent,
-        ].join('\n');
-        document.body.prepend(banner);
-      }, 3000);
-    </script>
-  </body>
+</body>
 </html>
