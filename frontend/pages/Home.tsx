@@ -192,7 +192,7 @@ export const Home: React.FC = () => {
                   <div className="flex flex-col items-center text-center px-4">
                     <h3 className="font-serif font-light md:font-medium text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
                     <div className="w-24 h-[1px] bg-warm-gold/30 mb-4"></div>
-                    <p className="text-warm-text/80 leading-[1.8] text-lg md:text-lg tracking-[0.15em] font-normal flex-grow">
+                    <p className="text-balance text-warm-text/80 leading-[1.8] text-lg md:text-lg tracking-[0.15em] font-normal flex-grow">
                       {facility.description}
                     </p>
                   </div>
@@ -220,7 +220,7 @@ export const Home: React.FC = () => {
                     <div className="flex flex-col items-center text-center px-4">
                       <h3 className="font-serif font-light md:font-medium text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
                       <div className="w-24 h-[1px] bg-warm-gold/30 mb-4"></div>
-                      <p className="text-warm-text/80 leading-[1.8] text-lg md:text-lg tracking-[0.15em] font-normal flex-grow">
+                      <p className="text-balance text-warm-text/80 leading-[1.8] text-lg md:text-lg tracking-[0.15em] font-normal flex-grow">
                         {facility.description}
                       </p>
                     </div>

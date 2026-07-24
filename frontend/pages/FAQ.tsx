@@ -11,7 +11,7 @@ export const FAQ: React.FC = () => {
             <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">Q & A</span>
             <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">常見問答</h1>
             <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
-            <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.15em] font-normal text-center">
+            <p className="text-balance text-warm-text/90 text-lg md:text-xl tracking-[0.15em] font-normal text-center">
               為您整理入住前常見的疑問，希望能幫助您更了解森33-3。
             </p>
           </div>
@@ -57,7 +57,7 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
           isOpen ? 'max-h-60 opacity-100 mb-8' : 'max-h-0 opacity-0 mb-0'
         }`}
       >
-        <p className="text-warm-text/75 text-base md:text-lg tracking-[0.1em] font-normal leading-[2] pl-4 border-l border-warm-gold/40">
+        <p className="text-balance text-warm-text/75 text-base md:text-lg tracking-[0.1em] font-normal leading-[2] pl-4 border-l border-warm-gold/40">
           {answer}
         </p>
       </div>
