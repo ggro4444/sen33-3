@@ -31,7 +31,7 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="font-serif font-normal text-4xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-10 leading-[1.6]"
+            className="font-serif font-light md:font-normal text-4xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-10 leading-[3]"
           >
             整棟都是你們的<br />自在就好
           </motion.h1>
@@ -61,7 +61,7 @@ export const Home: React.FC = () => {
           >
             <Link
               to="/rooms"
-              className="px-10 py-4 border-2 border-white text-white rounded-sm tracking-[0.2em] hover:bg-white hover:text-warm-text hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out text-lg md:text-xl font-medium w-full sm:w-auto"
+              className="px-10 py-4 border-2 border-white text-white rounded-sm tracking-[0.2em] hover:bg-white hover:text-warm-text hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out text-xl md:text-2xl font-medium w-full sm:w-auto"
             >
               查看房型
             </Link>
@@ -69,7 +69,7 @@ export const Home: React.FC = () => {
               href={CONTACT_INFO.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-warm-gold text-white rounded-sm tracking-[0.2em] shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out text-lg md:text-xl font-medium w-full sm:w-auto"
+              className="px-10 py-4 bg-warm-gold text-white rounded-sm tracking-[0.2em] shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out text-xl md:text-2xl font-medium w-full sm:w-auto"
             >
               立即訂房
             </a>
