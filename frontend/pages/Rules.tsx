@@ -5,17 +5,26 @@ import { AlertCircle } from 'lucide-react';
 export const Rules: React.FC = () => {
   useEffect(() => { document.title = '住宿規範 | 森33-3行旅'; }, []);
   return (
-    <div className="pt-40 pb-32 bg-transparent min-h-screen">
+    <div className="pt-32 md:pt-36 pb-24 md:pb-32 bg-transparent min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
         <AnimatedSection>
-          <div className="flex flex-col items-center mb-24">
+          <div className="flex flex-col items-center mb-14 md:mb-16">
             <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">POLICIES</span>
             <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">住宿須知</h1>
             <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
-            <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.15em] font-normal text-center">
+            <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.08em] leading-relaxed font-normal text-center">
               為了維持良好的住宿品質，請詳閱以下規範，感謝您的配合。
             </p>
           </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.05}>
+          <dl className="grid grid-cols-2 md:grid-cols-4 gap-px mb-14 bg-warm-text/15 border border-warm-text/15 rounded-md overflow-hidden text-center">
+            <div className="bg-warm-bg px-4 py-5"><dt className="text-sm text-warm-text/60 tracking-[0.08em]">入住</dt><dd className="mt-2 text-lg font-semibold text-warm-text">15:00 起</dd></div>
+            <div className="bg-warm-bg px-4 py-5"><dt className="text-sm text-warm-text/60 tracking-[0.08em]">退房</dt><dd className="mt-2 text-lg font-semibold text-warm-text">11:00 前</dd></div>
+            <div className="bg-warm-bg px-4 py-5"><dt className="text-sm text-warm-text/60 tracking-[0.08em]">靜音</dt><dd className="mt-2 text-lg font-semibold text-warm-text">22:00 後</dd></div>
+            <div className="bg-warm-bg px-4 py-5"><dt className="text-sm text-warm-text/60 tracking-[0.08em]">押金</dt><dd className="mt-2 text-lg font-semibold text-warm-text">$5,000</dd></div>
+          </dl>
         </AnimatedSection>
 
         <div className="space-y-20">
@@ -26,7 +35,7 @@ export const Rules: React.FC = () => {
                 <AlertCircle className="text-warm-gold" size={32} strokeWidth={1.5} />
                 <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em]">押金與付款</h2>
               </div>
-              <ul className="space-y-6 text-warm-text/90 text-lg md:text-xl tracking-[0.1em] font-normal">
+              <ul className="space-y-6 text-warm-text/95 text-lg md:text-xl tracking-[0.06em] font-normal">
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-text/60 text-sm font-medium tracking-[0.1em] uppercase w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
                     PAYMENT <span className="text-sm font-medium ml-1">(付款方式)</span>
@@ -53,7 +62,7 @@ export const Rules: React.FC = () => {
           <AnimatedSection delay={0.2}>
             <div className="border-t border-warm-text/20 pt-12">
               <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em] mb-10">入住與退房</h2>
-              <ul className="space-y-6 text-warm-text/90 text-lg md:text-xl tracking-[0.1em] font-normal">
+              <ul className="space-y-6 text-warm-text/95 text-lg md:text-xl tracking-[0.06em] font-normal">
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-text/60 text-sm font-medium tracking-[0.1em] uppercase w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
                     CHECK-IN <span className="text-sm font-medium ml-1">(入住時間)</span>
@@ -86,7 +95,7 @@ export const Rules: React.FC = () => {
           <AnimatedSection delay={0.3}>
             <div className="border-t border-warm-text/20 pt-12">
               <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em] mb-10">環境規範</h2>
-              <ul className="space-y-5 text-warm-text/90 text-lg md:text-xl tracking-[0.1em] font-normal">
+              <ul className="space-y-5 text-warm-text/95 text-lg md:text-xl tracking-[0.06em] font-normal">
                 <li className="flex items-start gap-4 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-gold mt-2 text-sm">◆</span>
                   <span className="leading-relaxed">全館室內與陽臺<span className="font-semibold text-warm-text mx-1">全面禁菸</span>（含電子煙與加熱菸），吸菸請至一樓庭院。</span>
@@ -101,7 +110,7 @@ export const Rules: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-4 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-gold mt-2 text-sm">◆</span>
-                  <span className="leading-relaxed">夜間 23:00 後請降低音量，避免影響鄰居安寧。</span>
+                  <span className="leading-relaxed">晚上 22:00 後請降低音量，避免影響鄰居安寧。</span>
                 </li>
                 <li className="flex items-start gap-4 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-gold mt-2 text-sm">◆</span>
@@ -113,7 +122,7 @@ export const Rules: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-4 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-gold mt-2 text-sm">◆</span>
-                  <span className="leading-relaxed">備品上限 12 人份，超過人數請自備寢具。</span>
+                  <span className="leading-relaxed">整棟最多入住 12 人，現場備品也僅準備 12 人份；恕無法加人入住。</span>
                 </li>
               </ul>
             </div>

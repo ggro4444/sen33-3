@@ -8,13 +8,16 @@ export const Rooms: React.FC = () => {
     <div className="pt-40 pb-32 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
-          <div className="flex flex-col items-center mb-32">
+          <div className="flex flex-col items-center mb-20 md:mb-24">
             <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">ACCOMMODATION</span>
             <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">客房介紹</h1>
             <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
-            <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.2em] max-w-3xl mx-auto leading-[2.5] text-center font-normal">
-              全棟共四間客房，標準入住 12 人。<br className="hidden md:block"/>每間房皆有大面採光與溫潤木質調，配備獨立冷氣與舒適寢具，<br className="hidden md:block"/>讓您在山城中擁有一夜好眠。
+            <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.1em] max-w-3xl mx-auto leading-[2] text-center font-normal">
+              全棟共四間客房，最多入住 12 人。每間房皆有大面採光、獨立冷氣與舒適寢具，讓您在山城中擁有一夜好眠。
             </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm md:text-base text-warm-text/80 tracking-[0.08em]">
+              <span>4 間客房</span><span aria-hidden="true">・</span><span>2 至 5 人房型</span><span aria-hidden="true">・</span><span>最多 12 人</span>
+            </div>
           </div>
         </AnimatedSection>
 

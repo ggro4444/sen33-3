@@ -7,7 +7,7 @@ export const CONTACT_INFO = {
   email: 'a0911382525@gmail.com',
   fb: 'https://facebook.com/profile.php?id=61576922006701',
   ig: 'https://instagram.com/sen333mori',
-  bookingUrl: 'https://a0911382525.bvtrip.tw/booking?start=2026-07-23&end=2026-07-24&amount=1&selected_rooms='
+  bookingUrl: 'https://a0911382525.bvtrip.tw/booking'
 };
 
 // Images using picsum with specific seeds to keep them consistent across reloads
@@ -83,7 +83,7 @@ export const FACILITIES: Facility[] = [
   {
     id: 'ktv-2f',
     name: 'KTV 視聽室',
-    description: '造價十二萬專業音響點歌系統，搭配舒適沙發區。盡情歡唱釋放壓力，夜間十點後請控制音量。',
+    description: '造價十二萬專業音響點歌系統，搭配舒適沙發區。盡情歡唱釋放壓力，晚上十點後請降低音量。',
     image: '/facility-ktv.webp'
   },
   {
@@ -123,7 +123,7 @@ export const FAQS: FAQ[] = [
   },
   {
     question: '押金怎麼收？什麼時候退還？',
-    answer: '入住時酌收清潔費押金 $5,000 元。退房後若屋內整潔無異常，將於 3 天內退還至您的指定帳戶。'
+    answer: '入住時收取押金 $5,000 元。退房後確認屋內設施無損壞、無違規後，將於 3 天內退還至指定帳戶。'
   },
   {
     question: '幾點可以入住？幾點要退房？',
@@ -139,7 +139,7 @@ export const FAQS: FAQ[] = [
   },
   {
     question: '可以幾個人入住？',
-    answer: '標準包棟上限為 12 人。備品以 12 人份供應，超過需自備寢具。另有精簡方案請於訂房時選擇。'
+    answer: '整棟最多入住 12 人，現場備品也僅準備 12 人份；恕無法加人入住。另有精簡方案請於訂房時選擇。'
   },
   {
     question: '怎麼入屋？',

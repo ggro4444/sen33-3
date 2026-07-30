@@ -12,7 +12,7 @@ export const Home: React.FC = () => {
   return (
     <div className="w-full bg-transparent">
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-[100svh] md:h-screen w-full overflow-hidden">
         <motion.div 
           className="absolute inset-0 w-full h-full"
           initial={{ scale: 1.05 }}
@@ -32,7 +32,7 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="font-serif font-light md:font-normal text-4xl md:text-6xl lg:text-7xl tracking-[0.15em] mb-10 leading-[1.4] md:!leading-[1.5]"
+            className="font-serif font-normal text-4xl md:text-5xl lg:text-6xl tracking-[0.12em] mb-7 md:mb-8 leading-[1.4] md:!leading-[1.45]"
           >
             整棟都是你們的<br />自在就好
           </motion.h1>
@@ -41,10 +41,10 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="flex items-center gap-6"
+            className="flex items-center gap-4 md:gap-6"
           >
             <div className="w-12 md:w-24 h-[1px] bg-white/50"></div>
-            <p className="text-base sm:text-xl md:text-2xl tracking-[0.3em] font-light text-white/90">
+            <p className="text-base sm:text-xl md:text-2xl tracking-[0.2em] font-normal text-white/95">
               <span>南投埔里</span>
               <span className="hidden sm:inline"> · </span>
               <br className="sm:hidden" />
@@ -53,12 +53,16 @@ export const Home: React.FC = () => {
             <div className="w-12 md:w-24 h-[1px] bg-white/50"></div>
           </motion.div>
 
+          <p className="mt-7 text-sm sm:text-base tracking-[0.08em] text-white/95 leading-relaxed">
+            4 間房・最多 12 人・可停 4 車・室內電梯・KTV・可開火
+          </p>
+
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.4 }}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-10 sm:mt-16 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 sm:mt-10 w-full sm:w-auto"
           >
             <Link
               to="/rooms"
@@ -124,7 +128,7 @@ export const Home: React.FC = () => {
                   </p>
 
                   {/* Collapsible: hidden on mobile when collapsed, always visible on desktop */}
-                  <div className={`${!isLetterExpanded ? 'hidden' : 'block'} md:block space-y-5`}>
+                  <div id="host-letter" className={`${!isLetterExpanded ? 'hidden' : 'block'} md:block space-y-5`}>
                     <p>
                       我是 Betty，歡迎來到森３３－３行旅。這裡沒有城市的匆忙，只有陽光、微風、綠意，和屬於你們的慢慢生活。
                     </p>
@@ -151,7 +155,9 @@ export const Home: React.FC = () => {
                   {/* Toggle — mobile only */}
                   <button
                     onClick={() => setIsLetterExpanded(!isLetterExpanded)}
-                    className="md:hidden w-full text-center py-3 text-warm-gold/80 text-sm tracking-[0.2em] hover:text-warm-gold transition-colors"
+                    aria-expanded={isLetterExpanded}
+                    aria-controls="host-letter"
+                    className="md:hidden w-full text-center py-3 text-warm-gold/90 text-sm tracking-[0.12em] hover:text-warm-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-warm-gold"
                   >
                     {isLetterExpanded ? '▲ 收起' : '▼ 展開閱讀 Betty 的信'}
                   </button>
