@@ -53,16 +53,21 @@ export const Home: React.FC = () => {
             <div className="w-12 md:w-24 h-[1px] bg-white/50"></div>
           </motion.div>
 
-          <p className="mt-7 text-sm sm:text-base tracking-[0.08em] text-white/95 leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.3 }}
+            className="mt-7 text-sm sm:text-base tracking-[0.08em] font-normal text-white/95 leading-relaxed"
+          >
             4 間房・最多 12 人・可停 4 車・室內電梯・KTV・可開火
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.4 }}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 sm:mt-10 w-full sm:w-auto"
+            className="relative flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 sm:mt-10 w-full sm:w-auto"
           >
             <Link
               to="/rooms"
@@ -78,6 +83,22 @@ export const Home: React.FC = () => {
             >
               立即訂房
             </a>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2, duration: 1 }}
+              className="absolute top-full left-1/2 mt-4 flex -translate-x-1/2 flex-col items-center sm:hidden"
+            >
+              <span className="mb-4 text-xs font-medium tracking-[0.3em] text-white/75">SCROLL</span>
+              <div className="relative h-16 w-[1px] overflow-hidden bg-white/20">
+                <motion.div
+                  className="absolute top-0 h-1/2 w-full bg-white"
+                  animate={{ y: ['-100%', '200%'] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                />
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -86,7 +107,7 @@ export const Home: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+          className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 flex-col items-center sm:flex"
         >
           <span className="text-white/75 text-xs tracking-[0.3em] mb-4 font-medium">SCROLL</span>
           <div className="w-[1px] h-16 bg-white/20 overflow-hidden relative">
