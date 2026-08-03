@@ -84,7 +84,7 @@ export const FACILITIES: Facility[] = [
   {
     id: 'ktv-2f',
     name: 'KTV 視聽室',
-    description: '造價十二萬專業音響點歌系統，搭配舒適沙發區。盡情歡唱釋放壓力，晚上十點後請降低音量。',
+    description: '真空管擴大器搭配高音質喇叭，打造沉浸式KTV饗宴，讓每首歌更有層次。每日開放 08:00–22:00，盡情歡唱。',
     image: '/facility-ktv.webp'
   },
   {
