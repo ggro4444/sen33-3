@@ -1,4 +1,4 @@
-import { Room, Facility, FAQ, Attraction } from './types';
+import { Room, Facility, FAQ, Attraction, Plan } from './types';
 
 export const CONTACT_INFO = {
   address: '南投縣埔里鎮一新里永興路33-3號',
@@ -13,6 +13,7 @@ export const CONTACT_INFO = {
 // Images using picsum with specific seeds to keep them consistent across reloads
 // Hero: 16:9 (1920x1080)
 export const HERO_IMAGE = '/hero.webp';
+export const PLAN_FULL_BG = '/plan-full-bg.png';
 
 // Rooms: 4:3 (800x600)
 export const ROOMS: Room[] = [
@@ -45,7 +46,7 @@ export const ROOMS: Room[] = [
     name: '2F 三人房',
     capacity: '3人',
     beds: '3張加大單人床',
-    features: ['木地板和室', '寬敞舒適', '窗戶', '陽台', '獨立衛浴', 'WiFi', '冷氣', '吹風機', '毛巾浴巾', '洗髮精', '沐浴乳'],
+    features: ['木地板和室', '寬敞舒適', '窗戶', '陽台', '獨立衛浴', '乾濕分離', 'WiFi', '冷氣', '吹風機', '毛巾浴巾', '洗髮精', '沐浴乳'],
     images: [
       '/room-2ft-1.webp',
       '/room-2ft-2.webp',
@@ -108,6 +109,37 @@ export const ATTRACTIONS: Attraction[] = [
   { name: '日月潭', time: '約 30 分鐘' }
 ];
 
+// Package plans (包棟方案) — 官網短名（平日限定以卡片 tag 標註，名稱不必與 BV Trip 全名一致）
+export const PLANS: Plan[] = [
+  {
+    id: 'full-12',
+    name: '12人全包方案',
+    capacity: '最多 12 人',
+    rooms: '全棟 4 間',
+    openRooms: ['1F 雙人房', '2F 雙人房', '2F 三人房', '3F 五人房'],
+    description: '適合家族團聚、朋友揪團。\n整個家都是你們的，想住哪間就住哪間。',
+    weekdayOnly: false,
+  },
+  {
+    id: 'mid-5to7',
+    name: '5-7人包棟方案',
+    capacity: '5-7 人',
+    rooms: '3 間',
+    openRooms: ['1F 雙人房', '2F 雙人房', '2F 三人房'],
+    description: '人數彈性，5 人到 7 人都適用同價。\n三間房剛剛好，其餘空間一樣都是你們的。',
+    weekdayOnly: true,
+  },
+  {
+    id: 'mini-4',
+    name: '4人包棟方案',
+    capacity: '4 人',
+    rooms: '2 間',
+    openRooms: ['1F 雙人房', '2F 雙人房'],
+    description: '兩人世界、小家庭、閨蜜小旅行都剛好。\n兩間房靜靜的，整棟還是只有你們。',
+    weekdayOnly: true,
+  },
+];
+
 export const FAQS: FAQ[] = [
   {
     question: '可以烤肉嗎？',
@@ -139,7 +171,7 @@ export const FAQS: FAQ[] = [
   },
   {
     question: '可以幾個人入住？',
-    answer: '整棟最多入住 12 人，現場備品也僅準備 12 人份；恕無法加人入住。另有精簡方案請於訂房時選擇。'
+    answer: '整棟最多入住 12 人，現場備品也僅準備 12 人份；恕無法加人入住。另有 5-7人／4人精簡方案，詳見「包棟方案」。'
   },
   {
     question: '怎麼入屋？',

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatedSection } from '../components/AnimatedSection';
+import { Plus } from 'lucide-react';
 import { FAQS } from '../constants';
 
 export const FAQ: React.FC = () => {
@@ -13,7 +14,7 @@ export const FAQ: React.FC = () => {
             <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">常見問答</h1>
             <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
             <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.08em] leading-relaxed font-normal text-center">
-              為您整理入住前常見的疑問，希望能幫助您更了解森33-3。
+              為您整理入住前常見的疑問，<span className="font-handwriting text-warm-gold">希望能幫助您更了解森33-3。</span>
             </p>
           </div>
         </AnimatedSection>
@@ -28,7 +29,8 @@ export const FAQ: React.FC = () => {
 
         <AnimatedSection delay={FAQS.length * 0.05}>
           <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.15em] font-normal text-center mt-16">
-            還有其他問題嗎？直接透過 LINE 聯繫我們！我們非常樂意解答！
+            <span className="font-handwriting text-3xl md:text-4xl text-warm-gold block mb-4">還有其他問題嗎？</span>
+            直接透過 LINE 聯繫我們！我們非常樂意解答！
           </p>
         </AnimatedSection>
       </div>
@@ -50,9 +52,10 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
         <span className="font-serif font-semibold text-xl md:text-2xl text-warm-text tracking-[0.15em] pr-8 group-hover:text-warm-gold transition-colors duration-300">
           {question}
         </span>
-        <div className="relative w-4 h-4 shrink-0">
-          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-warm-text/60 -translate-y-1/2 transition-transform duration-500"></div>
-          <div className={`absolute top-0 left-1/2 w-[1px] h-full bg-warm-text/60 -translate-x-1/2 transition-transform duration-500 ${isOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`}></div>
+        <div className={`w-8 h-8 rounded-full border border-warm-gold/50 flex items-center justify-center shrink-0 transition-all duration-500 ${
+          isOpen ? 'bg-warm-gold text-white rotate-45 border-warm-gold' : 'text-warm-gold'
+        }`}>
+          <Plus size={16} strokeWidth={2} />
         </div>
       </button>
       <div

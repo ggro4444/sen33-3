@@ -23,3 +23,13 @@ export interface Attraction {
   name: string;
   time: string;
 }
+
+export interface Plan {
+  id: string;
+  name: string;
+  capacity: string;    // 人數
+  rooms: string;       // 開房數
+  openRooms: string[]; // 開放房間（每個房型一個元素，分段顯示）
+  description: string; // 說明
+  weekdayOnly: boolean; // 是否平日限定
+}

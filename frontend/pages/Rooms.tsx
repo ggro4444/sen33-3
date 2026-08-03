@@ -13,9 +13,10 @@ export const Rooms: React.FC = () => {
             <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">客房介紹</h1>
             <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
             <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.1em] max-w-3xl mx-auto leading-[2] text-center font-normal">
-              全棟共四間客房，最多入住 12 人。每間房皆有大面採光、獨立冷氣與舒適寢具，讓您在山城中擁有一夜好眠。
+              <span className="block">全棟共四間客房，最多入住 12 人。</span>
+              <span className="block">每間房皆有大面採光、獨立冷氣與舒適寢具，<span className="font-handwriting text-warm-gold">讓您在山城中擁有一夜好眠。</span></span>
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm md:text-base text-warm-text/80 tracking-[0.08em]">
+            <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm md:text-base font-bold text-warm-text/80 tracking-[0.08em]">
               <span>4 間客房</span><span aria-hidden="true">・</span><span>2 至 5 人房型</span><span aria-hidden="true">・</span><span>最多 12 人</span>
             </div>
           </div>
@@ -56,7 +57,7 @@ const RoomSection: React.FC<{ room: any; reverse: boolean }> = ({ room, reverse 
                 key={idx}
                 onClick={() => setActiveImg(idx)}
                 className={`relative w-24 md:w-32 aspect-[4/3] shrink-0 overflow-hidden rounded-md transition-all duration-500 ease-out hover:-translate-y-[2px] active:scale-[0.98] ${
-                  activeImg === idx ? 'opacity-100 ring-2 ring-warm-gold/60 ring-offset-4 ring-offset-warm-bg' : 'opacity-60 hover:opacity-100'
+                  activeImg === idx ? 'opacity-100 ring-2 ring-warm-gold/60 ring-offset-4 ring-offset-warm-bg' : 'opacity-60 hover:opacity-100 hover:ring-2 hover:ring-warm-gold/30 hover:ring-offset-2 hover:ring-offset-warm-bg'
                 }`}
               >
                 <img src={img} alt={`${room.name} 照片 ${idx + 1}`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
@@ -70,24 +71,27 @@ const RoomSection: React.FC<{ room: any; reverse: boolean }> = ({ room, reverse 
         <div className="w-full lg:w-5/12 flex flex-col justify-center">
           <h2 className="font-serif font-semibold text-3xl md:text-5xl text-warm-text tracking-[0.2em] mb-8">{room.name}</h2>
           
-          <div className="flex flex-col gap-4 mb-6 md:mb-12 text-warm-text/90 text-lg tracking-[0.15em] font-normal">
+          <dl className="flex flex-col gap-4 mb-6 md:mb-12 text-warm-text/90 text-lg tracking-[0.15em] font-normal">
             <div className="flex items-center gap-4 border-b border-warm-text/10 pb-4">
-              <span className="text-sm font-medium text-warm-text/60 w-40 uppercase tracking-widest">
-                CAPACITY <span className="text-sm font-medium tracking-normal ml-1">(人數)</span>
-              </span>
-              <span>{room.capacity}</span>
+              <dt className="w-32 shrink-0">
+                <span className="block text-lg font-semibold text-warm-text tracking-[0.1em]">人數</span>
+                <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">CAPACITY</span>
+              </dt>
+              <dd>{room.capacity}</dd>
             </div>
             <div className="flex items-center gap-4 border-b border-warm-text/10 pb-4">
-              <span className="text-sm font-medium text-warm-text/60 w-40 uppercase tracking-widest">
-                BEDS <span className="text-sm font-medium tracking-normal ml-1">(床型)</span>
-              </span>
-              <span>{room.beds}</span>
+              <dt className="w-32 shrink-0">
+                <span className="block text-lg font-semibold text-warm-text tracking-[0.1em]">床型</span>
+                <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">BEDS</span>
+              </dt>
+              <dd>{room.beds}</dd>
             </div>
-          </div>
+          </dl>
 
           <div>
-            <h3 className="text-sm font-medium text-warm-text/60 uppercase tracking-[0.2em] mb-6">
-              FEATURES <span className="text-sm font-medium tracking-normal ml-1">(房內設備)</span>
+            <h3 className="mb-6">
+              <span className="block text-lg font-semibold text-warm-text tracking-[0.1em]">房內設備</span>
+              <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">FEATURES</span>
             </h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8">
               {room.features.map((feature: string, idx: number) => (

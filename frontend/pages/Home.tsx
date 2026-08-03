@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpDown, LayoutGrid, TreePine, CloudSun, MapPin } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { HERO_IMAGE, FACILITIES, ATTRACTIONS, CONTACT_INFO } from '../constants';
+import { Facility } from '../types';
 
 export const Home: React.FC = () => {
   useEffect(() => { document.title = '森33-3行旅 | 埔里包棟民宿'; }, []);
@@ -79,7 +80,7 @@ export const Home: React.FC = () => {
               href={CONTACT_INFO.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-warm-gold text-white rounded-sm tracking-[0.2em] shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out text-xl md:text-2xl font-medium w-full sm:w-auto"
+              className="px-10 py-4 bg-warm-gold text-white rounded-sm tracking-[0.2em] shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out text-2xl md:text-3xl font-serif font-medium w-full sm:w-auto"
             >
               立即訂房
             </a>
@@ -204,27 +205,7 @@ export const Home: React.FC = () => {
             {/* First 3 items */}
             {FACILITIES.slice(0, 3).map((facility, index) => (
               <AnimatedSection key={facility.id} delay={index * 0.1}>
-                <div className="group cursor-pointer flex flex-col h-full hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out">
-                  {facility.image && (
-                    <div className="relative overflow-hidden aspect-[4/5] mb-6 shadow-card rounded-md flex items-center justify-center bg-warm-text/5">
-                      <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                      <img 
-                        src={facility.image} 
-                        alt={facility.name}
-                        className="w-full h-full object-cover transition-transform duration-1000"
-                      loading="lazy"
-                      decoding="async"
-                      />
-                    </div>
-                  )}
-                  <div className="flex flex-col items-center text-center px-4">
-                    <h3 className="font-serif font-light md:font-medium text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
-                    <div className="w-24 h-[1px] bg-warm-gold/30 mb-4"></div>
-                    <p className="text-warm-text/80 leading-[1.8] text-lg md:text-lg tracking-[0.15em] font-normal flex-grow">
-                      {facility.description}
-                    </p>
-                  </div>
-                </div>
+                <FacilityCard facility={facility} />
               </AnimatedSection>
             ))}
             
@@ -232,27 +213,7 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-3 flex flex-col md:flex-row justify-center gap-12 md:gap-16">
               {FACILITIES.slice(3).map((facility, index) => (
                 <AnimatedSection key={facility.id} delay={(index + 3) * 0.1} className="w-full md:w-1/2 lg:w-1/3">
-                  <div className="group cursor-pointer flex flex-col h-full hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out">
-                    {facility.image && (
-                      <div className="relative overflow-hidden aspect-[4/5] mb-6 shadow-card rounded-md flex items-center justify-center bg-warm-text/5">
-                        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                        <img 
-                          src={facility.image} 
-                          alt={facility.name}
-                          className="w-full h-full object-cover transition-transform duration-1000"
-                      loading="lazy"
-                      decoding="async"
-                        />
-                      </div>
-                    )}
-                    <div className="flex flex-col items-center text-center px-4">
-                      <h3 className="font-serif font-light md:font-medium text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
-                      <div className="w-24 h-[1px] bg-warm-gold/30 mb-4"></div>
-                      <p className="text-warm-text/80 leading-[1.8] text-lg md:text-lg tracking-[0.15em] font-normal flex-grow">
-                        {facility.description}
-                      </p>
-                    </div>
-                  </div>
+                  <FacilityCard facility={facility} />
                 </AnimatedSection>
               ))}
             </div>
@@ -334,3 +295,28 @@ export const Home: React.FC = () => {
     </div>
   );
 };
+
+/* 設施卡（共用元件） */
+const FacilityCard: React.FC<{ facility: Facility }> = ({ facility }) => (
+  <div className="group flex flex-col h-full hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out">
+    {facility.image && (
+      <div className="relative overflow-hidden aspect-[4/5] mb-6 shadow-card rounded-md flex items-center justify-center bg-warm-text/5">
+        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
+        <img
+          src={facility.image}
+          alt={facility.name}
+          className="w-full h-full object-cover transition-transform duration-1000"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    )}
+    <div className="flex flex-col items-center text-center px-4">
+      <h3 className="font-serif font-light md:font-medium text-3xl text-warm-text mb-3 tracking-[0.2em]">{facility.name}</h3>
+      <div className="w-24 h-[1px] bg-warm-gold/30 mb-4"></div>
+      <p className="text-warm-text/80 leading-[1.8] text-lg md:text-lg tracking-[0.15em] font-normal flex-grow">
+        {facility.description}
+      </p>
+    </div>
+  </div>
+);

@@ -13,17 +13,17 @@ export const Rules: React.FC = () => {
             <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">住宿須知</h1>
             <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
             <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.08em] leading-relaxed font-normal text-center">
-              為了維持良好的住宿品質，請詳閱以下規範，感謝您的配合。
+              為了維持良好的住宿品質，請詳閱以下規範，<span className="font-handwriting text-warm-gold">感謝您的配合。</span>
             </p>
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.05}>
           <dl className="grid grid-cols-2 md:grid-cols-4 gap-px mb-14 bg-warm-text/15 border border-warm-text/15 rounded-md overflow-hidden text-center">
-            <div className="bg-warm-bg px-4 py-5"><dt className="text-sm text-warm-text/60 tracking-[0.08em]">入住</dt><dd className="mt-2 text-lg font-semibold text-warm-text">15:00 起</dd></div>
-            <div className="bg-warm-bg px-4 py-5"><dt className="text-sm text-warm-text/60 tracking-[0.08em]">退房</dt><dd className="mt-2 text-lg font-semibold text-warm-text">11:00 前</dd></div>
-            <div className="bg-warm-bg px-4 py-5"><dt className="text-sm text-warm-text/60 tracking-[0.08em]">靜音</dt><dd className="mt-2 text-lg font-semibold text-warm-text">22:00 後</dd></div>
-            <div className="bg-warm-bg px-4 py-5"><dt className="text-sm text-warm-text/60 tracking-[0.08em]">押金</dt><dd className="mt-2 text-lg font-semibold text-warm-text">$5,000</dd></div>
+            <div className="bg-warm-bg px-4 py-5"><dt className="text-xl tracking-[0.08em] font-handwriting text-warm-gold">入住</dt><dd className="mt-2 text-lg font-semibold text-warm-text">15:00 起</dd></div>
+            <div className="bg-warm-bg px-4 py-5"><dt className="text-xl tracking-[0.08em] font-handwriting text-warm-gold">退房</dt><dd className="mt-2 text-lg font-semibold text-warm-text">11:00 前</dd></div>
+            <div className="bg-warm-bg px-4 py-5"><dt className="text-xl tracking-[0.08em] font-handwriting text-warm-gold">靜音</dt><dd className="mt-2 text-lg font-semibold text-warm-text">22:00 後</dd></div>
+            <div className="bg-warm-bg px-4 py-5"><dt className="text-xl tracking-[0.08em] font-handwriting text-warm-gold">押金</dt><dd className="mt-2 text-lg font-semibold text-warm-text">$5,000</dd></div>
           </dl>
         </AnimatedSection>
 
@@ -37,20 +37,23 @@ export const Rules: React.FC = () => {
               </div>
               <ul className="space-y-6 text-warm-text/95 text-lg md:text-xl tracking-[0.06em] font-normal">
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
-                  <span className="text-warm-text/60 text-sm font-medium tracking-[0.1em] uppercase w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
-                    PAYMENT <span className="text-sm font-medium ml-1">(付款方式)</span>
+                  <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">付款方式</span>
+                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">PAYMENT</span>
                   </span> 
                   <span className="leading-relaxed">請於訂房後 24 小時內完成付款，系統才能為您保留房間。若逾時未完成，訂房平台會自動取消訂單</span>
                 </li>
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
-                  <span className="text-warm-text/60 text-sm font-medium tracking-[0.1em] uppercase w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
-                    DEPOSIT <span className="text-sm font-medium ml-1">(押金)</span>
+                  <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">押金</span>
+                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">DEPOSIT</span>
                   </span> 
                   <span className="leading-relaxed">入住時收取押金 $5,000。</span>
                 </li>
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
-                  <span className="text-warm-text/60 text-sm font-medium tracking-[0.1em] uppercase w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
-                    REFUND <span className="text-sm font-medium ml-1">(退還)</span>
+                  <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">退還</span>
+                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">REFUND</span>
                   </span> 
                   <span className="leading-relaxed">退房後檢查屋內設施無損壞、無違規（如室內抽菸），將於 3 天內退還至指定帳戶。</span>
                 </li>
@@ -64,26 +67,30 @@ export const Rules: React.FC = () => {
               <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em] mb-10">入住與退房</h2>
               <ul className="space-y-6 text-warm-text/95 text-lg md:text-xl tracking-[0.06em] font-normal">
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
-                  <span className="text-warm-text/60 text-sm font-medium tracking-[0.1em] uppercase w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
-                    CHECK-IN <span className="text-sm font-medium ml-1">(入住時間)</span>
+                  <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">入住時間</span>
+                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">CHECK-IN</span>
                   </span> 
                   <span className="leading-relaxed">15:00 起（最晚入住 22:00）</span>
                 </li>
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
-                  <span className="text-warm-text/60 text-sm font-medium tracking-[0.1em] uppercase w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
-                    CHECK-OUT <span className="text-sm font-medium ml-1">(退房時間)</span>
+                  <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">退房時間</span>
+                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">CHECK-OUT</span>
                   </span> 
                   <span className="leading-relaxed">11:00 前</span>
                 </li>
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
-                  <span className="text-warm-text/60 text-sm font-medium tracking-[0.1em] uppercase w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
-                    METHOD <span className="text-sm font-medium ml-1">(入屋方式)</span>
+                  <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">入屋方式</span>
+                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">METHOD</span>
                   </span> 
                   <span className="leading-relaxed">自助入住。入住當天下午透過 LINE 傳送 QR Code，掃碼入屋。</span>
                 </li>
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
-                  <span className="text-warm-text/60 text-sm font-medium tracking-[0.1em] uppercase w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
-                    LATE OUT <span className="text-sm font-medium ml-1">(延遲退房)</span>
+                  <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">延遲退房</span>
+                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">LATE OUT</span>
                   </span> 
                   <span className="leading-relaxed">每 30 分鐘加收 $600（需事先確認，不足 30 分鐘以 30 分鐘計）。</span>
                 </li>
@@ -130,8 +137,8 @@ export const Rules: React.FC = () => {
 
           {/* Cancellation Policy */}
           <AnimatedSection delay={0.4}>
-            <div className="border-t border-warm-text/20 pt-12">
-              <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em] mb-10">取消政策</h2>
+            <div className="bg-warm-gold/10 border border-warm-gold/30 rounded-md p-8 md:p-12">
+              <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em] mb-8">取消政策</h2>
               <div className="overflow-x-auto mb-8">
                 <table className="w-full text-left text-warm-text/90 text-lg md:text-xl tracking-[0.1em] font-normal border-collapse min-w-[500px]">
                   <thead>

@@ -29,6 +29,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navLinks = [
     { name: '首頁', path: '/' },
     { name: '客房介紹', path: '/rooms' },
+    { name: '包棟方案', path: '/plans' },
     { name: '住宿須知', path: '/rules' },
     { name: '常見問答', path: '/faq' },
   ];
@@ -60,7 +61,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-lg font-medium tracking-[0.15em] hover:-translate-y-[2px] active:scale-[0.98] hover:opacity-70 transition-all duration-500 ease-out ${
+                className={`text-lg font-bold tracking-[0.15em] hover:-translate-y-[2px] active:scale-[0.98] hover:opacity-70 transition-all duration-500 ease-out ${
                   forceDarkText ? 'text-warm-text' : 'text-white'
                 } ${location.pathname === link.path ? 'border-b-2 border-current pb-1' : 'pb-1 border-b-2 border-transparent'}`}
               >
@@ -71,7 +72,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               href={CONTACT_INFO.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 px-8 py-3 text-lg font-medium tracking-[0.2em] bg-warm-gold text-white rounded-sm shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out"
+              className="ml-4 px-8 py-3 text-xl font-serif font-bold tracking-[0.2em] bg-warm-gold text-white rounded-sm shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out"
             >
               立即訂房
             </a>
@@ -105,7 +106,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-warm-text text-xl font-medium tracking-[0.2em] py-3 border-b border-warm-text/10 hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out"
+                className="text-warm-text text-xl font-bold tracking-[0.2em] py-3 border-b border-warm-text/10 hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out"
               >
                 {link.name}
               </Link>
@@ -114,7 +115,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               href={CONTACT_INFO.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 text-center bg-warm-gold text-white text-xl font-medium py-4 tracking-[0.2em] rounded-sm shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out"
+              className="mt-6 text-center bg-warm-gold text-white text-2xl font-serif font-medium py-4 tracking-[0.2em] rounded-sm shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out"
             >
               立即訂房
             </a>
@@ -206,7 +207,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                 href={CONTACT_INFO.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-warm-gold text-white px-10 py-4 text-lg font-medium tracking-[0.2em] rounded-sm shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out w-full md:w-auto text-center"
+                className="bg-warm-gold text-white px-10 py-4 text-xl font-serif font-medium tracking-[0.2em] rounded-sm shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out w-full md:w-auto text-center"
               >
                 立即訂房
               </a>

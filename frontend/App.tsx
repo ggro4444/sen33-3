@@ -4,6 +4,7 @@ import { Layout } from './components/Layout';
 
 const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
 const Rooms = lazy(() => import('./pages/Rooms').then(m => ({ default: m.Rooms })));
+const Plans = lazy(() => import('./pages/Plans').then(m => ({ default: m.Plans })));
 const Rules = lazy(() => import('./pages/Rules').then(m => ({ default: m.Rules })));
 const FAQ = lazy(() => import('./pages/FAQ').then(m => ({ default: m.FAQ })));
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/rooms" element={<Rooms />} />
+            <Route path="/plans" element={<Plans />} />
             <Route path="/rules" element={<Rules />} />
             <Route path="/faq" element={<FAQ />} />
           </Routes>
