@@ -20,8 +20,11 @@ export interface FAQ {
 }
 
 export interface Attraction {
+  id: string;
   name: string;
   time: string;
+  description: string;
+  image?: string; // 特色景點橫幅圖（僅 ATTRACTION_FEATURED 使用）
 }
 
 export interface Plan {

@@ -1,10 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowUpDown, LayoutGrid, TreePine, CloudSun, MapPin } from 'lucide-react';
+import { ArrowUpDown, LayoutGrid, TreePine, CloudSun, MapPin, Landmark, Flame, Droplets, Waves, Mountain, Ticket, type LucideIcon } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
-import { HERO_IMAGE, FACILITIES, ATTRACTIONS, CONTACT_INFO } from '../constants';
+import { HERO_IMAGE, FACILITIES, ATTRACTIONS, ATTRACTION_FEATURED, CONTACT_INFO } from '../constants';
 import { Facility } from '../types';
+
+// 景點圖示（由近到遠的路線，每一站一個代表圖示）
+const ATTRACTION_ICONS: Record<string, LucideIcon> = {
+  'chung-tai': Landmark,
+  'fu-hsing': Flame,
+  'neng-kao': Droplets,
+  'li-yu': Waves,
+  'hu-tou': Mountain,
+  'di-mu': Landmark,
+  'formosan': Ticket,
+};
 
 export const Home: React.FC = () => {
   useEffect(() => { document.title = '森33-3行旅 | 埔里包棟民宿'; }, []);
@@ -242,51 +253,88 @@ export const Home: React.FC = () => {
             <div className="flex flex-col items-center mb-20">
               <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">LOCATION</span>
               <h2 className="font-serif font-semibold text-4xl md:text-5xl text-warm-text tracking-[0.2em] mb-6">周邊探索</h2>
-              <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent"></div>
+              <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
+              <p className="font-handwriting text-2xl md:text-3xl text-warm-gold leading-relaxed mb-3">把時間，留給附近的好風景。</p>
+              <p className="text-warm-text/70 text-base md:text-lg tracking-[0.08em] leading-relaxed">從森33-3出發，每個景點開車都在半小時內。</p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              {/* Left Column: Attractions List */}
-              <div className="flex flex-col justify-center h-full">
-                <ul className="flex flex-col gap-8">
-                  {ATTRACTIONS.map((attr, index) => (
-                    <li key={index} className="flex justify-between items-end border-b border-warm-text/10 pb-4 group hover:-translate-y-[2px] transition-all duration-500 ease-out">
-                      <span className="text-warm-text text-xl tracking-[0.15em] font-normal group-hover:text-warm-gold transition-colors">{attr.name}</span>
-                      <span className="text-warm-text/75 text-base tracking-wider font-normal">{attr.time}</span>
-                    </li>
-                  ))}
-                </ul>
+            {/* 特色景點 — 全寬橫幅大卡 */}
+            <AnimatedSection>
+              <div className="relative rounded-md shadow-card overflow-hidden mb-6 md:mb-8">
+                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${ATTRACTION_FEATURED.image})` }} />
+                <div className="absolute inset-0 bg-warm-dark/70" />
+                <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8 p-8 md:p-12">
+                  <div className="max-w-2xl">
+                    <div className="flex items-center gap-2.5 mb-4">
+                      <Ticket size={22} strokeWidth={1.5} className="text-warm-gold shrink-0" />
+                      <span className="text-warm-gold text-sm tracking-[0.3em] font-medium uppercase">FEATURED SPOT</span>
+                    </div>
+                    <h3 className="font-serif font-semibold text-3xl md:text-5xl text-warm-bg tracking-[0.15em] leading-snug mb-5">{ATTRACTION_FEATURED.name}</h3>
+                    <p className="text-warm-bg/85 text-lg md:text-xl tracking-[0.06em] leading-relaxed">{ATTRACTION_FEATURED.description}</p>
+                  </div>
+                  <div className="shrink-0 md:text-right">
+                    <span className="inline-block bg-warm-gold/15 border border-warm-gold/40 text-warm-gold px-6 py-3 rounded-sm tracking-widest font-semibold text-base md:text-lg">
+                      {ATTRACTION_FEATURED.time} 車程
+                    </span>
+                  </div>
+                </div>
               </div>
-              
-              {/* Right Column: Google Maps */}
-              <div className="w-full flex flex-col">
-                <div className="mb-8">
-                  <h3 className="font-serif font-semibold text-lg sm:text-2xl text-warm-text tracking-[0.15em] mb-3 flex items-center gap-2 sm:gap-3">
-                    <MapPin size={20} className="text-warm-gold shrink-0" strokeWidth={1.5} />
-                    <span>森33-3行旅  我們在這裡～</span>
-                  </h3>
-                  <a 
-                    href="https://maps.app.goo.gl/NKrjpLzvarseNNjW7?g_st=ic" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs sm:text-sm text-warm-text/75 tracking-[0.15em] font-normal pl-6 sm:pl-9 hover:text-warm-gold transition-colors group active:scale-[0.98]"
-                  >
-                    Google 導航請直接點擊「<span className="font-semibold text-warm-text group-hover:text-warm-gold transition-colors">森33-3行旅</span>」
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  </a>
-                </div>
-                <div className="w-full h-80 lg:h-96 rounded-md overflow-hidden shadow-card bg-warm-text/5">
-                  <iframe
-                    title="Google Maps Location"
-                    src="https://maps.google.com/maps?q=南投縣埔里鎮一新里永興路33-3號&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={false}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
+              <p className="text-xs text-warm-text/40 tracking-wider mb-8 text-right">照片：Wikimedia Commons（阿道，CC BY-SA 4.0）</p>
+            </AnimatedSection>
+
+            {/* 景點卡片網格 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {ATTRACTIONS.map((attr, index) => {
+                const Icon = ATTRACTION_ICONS[attr.id] || MapPin;
+                return (
+                  <AnimatedSection key={attr.id} delay={index * 0.08}>
+                    <div className="h-full bg-white/30 border border-warm-gold/20 rounded-md shadow-card p-6 md:p-7 flex flex-col hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out">
+                      <div className="flex items-start justify-between gap-4 mb-4">
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <Icon size={20} strokeWidth={1.5} className="text-warm-gold shrink-0" />
+                          <h3 className="font-serif font-semibold text-xl md:text-2xl text-warm-text tracking-[0.1em] leading-snug">{attr.name}</h3>
+                        </div>
+                        <span className="shrink-0 text-warm-gold/80 text-sm md:text-base tracking-wider font-semibold pt-0.5">{attr.time}</span>
+                      </div>
+                      <div className="w-10 h-[1px] bg-warm-gold/30 mb-4"></div>
+                      <p className="text-warm-text/75 text-sm md:text-base tracking-[0.08em] leading-relaxed font-normal flex-grow">
+                        {attr.description}
+                      </p>
+                    </div>
+                  </AnimatedSection>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+
+          {/* Google Maps — 全寬 */}
+          <AnimatedSection delay={0.15}>
+            <div className="mt-16 md:mt-20">
+              <div className="mb-8">
+                <h3 className="font-serif font-semibold text-lg sm:text-2xl text-warm-text tracking-[0.15em] mb-3 flex items-center gap-2 sm:gap-3">
+                  <MapPin size={20} className="text-warm-gold shrink-0" strokeWidth={1.5} />
+                  <span>森33-3行旅  我們在這裡～</span>
+                </h3>
+                <a 
+                  href="https://maps.app.goo.gl/NKrjpLzvarseNNjW7?g_st=ic" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm text-warm-text/75 tracking-[0.15em] font-normal pl-6 sm:pl-9 hover:text-warm-gold transition-colors group active:scale-[0.98]"
+                >
+                  Google 導航請直接點擊「<span className="font-semibold text-warm-text group-hover:text-warm-gold transition-colors">森33-3行旅</span>」
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+              <div className="w-full h-80 md:h-96 rounded-md overflow-hidden shadow-card bg-warm-text/5">
+                <iframe
+                  title="Google Maps Location"
+                  src="https://maps.google.com/maps?q=南投縣埔里鎮一新里永興路33-3號&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </AnimatedSection>

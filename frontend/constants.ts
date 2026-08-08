@@ -101,12 +101,53 @@ export const FACILITIES: Facility[] = [
   }
 ];
 
+// 特色景點（全寬橫幅大卡，首頁代表）
+export const ATTRACTION_FEATURED: Attraction = {
+  id: 'formosan',
+  name: '九族文化村',
+  time: '約 25 分鐘',
+  description: '結合原住民文化與遊樂設施的主題樂園，是埔里周邊最熱門的玩點，適合安排半日到一整天。',
+  image: '/formosan-square.webp'
+};
+
+// 周邊景點（小卡，由近到遠；特色景點獨立於 ATTRACTION_FEATURED）
 export const ATTRACTIONS: Attraction[] = [
-  { name: '萊爾富 (24h)', time: '約 5 分鐘' },
-  { name: '中台禪寺', time: '約 6 分鐘' },
-  { name: '埔里酒廠', time: '約 14 分鐘' },
-  { name: '日月老茶廠', time: '約 23 分鐘' },
-  { name: '日月潭', time: '約 30 分鐘' }
+  {
+    id: 'chung-tai',
+    name: '中台禪寺',
+    time: '約 6 分鐘',
+    description: '世界級的宏偉佛寺建築，免費入園參觀，金頂蓮花與大雄寶殿都值得一看。'
+  },
+  {
+    id: 'fu-hsing',
+    name: '福興溫泉',
+    time: '約 10 分鐘',
+    description: '免費泡腳池與親子共融公園，夏天玩水、冬天泡湯，四季都適合順遊。'
+  },
+  {
+    id: 'neng-kao',
+    name: '能高瀑布',
+    time: '約 10 分鐘',
+    description: '車子停好就能近距離感受瀑布水霧，免走山路，大人小孩都輕鬆抵達。'
+  },
+  {
+    id: 'li-yu',
+    name: '埔里鯉魚潭',
+    time: '約 15 分鐘',
+    description: '有小西湖之稱的環潭步道，步行一圈約 45 分鐘，也能搭小火車輕鬆繞湖。'
+  },
+  {
+    id: 'hu-tou',
+    name: '虎頭山',
+    time: '約 15 分鐘',
+    description: '開車直上觀景台，俯瞰埔里盆地全景，是看夜景與飛行傘起飛的知名地點。'
+  },
+  {
+    id: 'di-mu',
+    name: '埔里地母廟',
+    time: '約 15 分鐘',
+    description: '俗稱寶湖宮的天地堂地母廟，位於金鷹山上，廟宇建築氣勢恢弘，山腳有大型免費停車場。'
+  }
 ];
 
 // Package plans (包棟方案) — 官網短名（平日限定以卡片 tag 標註，名稱不必與 BV Trip 全名一致）
