@@ -13,8 +13,14 @@ export const Plans: React.FC = () => {
         {/* Page Header — 淺色（與其他頁一致），手寫簽名語 */}
         <AnimatedSection>
           <div className="flex flex-col items-center mb-16 md:mb-20">
-            <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">PACKAGES</span>
-            <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">包棟方案</h1>
+            <div className="relative flex flex-col items-center">
+              {/* Stamp decoration — Signature Move S6 */}
+              <div className="absolute -top-10 right-[-4rem] md:right-[-6rem] w-16 h-16 md:w-20 md:h-20 border border-warm-gold/30 rounded-full flex items-center justify-center opacity-40 rotate-12 pointer-events-none hidden md:flex">
+                <span className="font-serif text-[10px] md:text-xs tracking-widest text-warm-gold text-center leading-tight">MORI<br/>33-3</span>
+              </div>
+              <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">PACKAGES</span>
+              <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">包棟方案</h1>
+            </div>
             <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
             <p className="font-handwriting text-3xl md:text-4xl text-warm-gold leading-relaxed mb-6">整棟都是你們的。</p>
             <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.1em] max-w-3xl mx-auto leading-[2] text-center font-normal">

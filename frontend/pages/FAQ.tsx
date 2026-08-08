@@ -10,8 +10,14 @@ export const FAQ: React.FC = () => {
       <div className="max-w-3xl mx-auto px-6">
         <AnimatedSection>
           <div className="flex flex-col items-center mb-14 md:mb-16">
-            <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">Q & A</span>
-            <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">常見問答</h1>
+            <div className="relative flex flex-col items-center">
+              {/* Stamp decoration — Signature Move S6 */}
+              <div className="absolute -top-10 right-[-4rem] md:right-[-6rem] w-16 h-16 md:w-20 md:h-20 border border-warm-gold/30 rounded-full flex items-center justify-center opacity-40 rotate-12 pointer-events-none hidden md:flex">
+                <span className="font-serif text-[10px] md:text-xs tracking-widest text-warm-gold text-center leading-tight">MORI<br/>33-3</span>
+              </div>
+              <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">Q & A</span>
+              <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">常見問答</h1>
+            </div>
             <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
             <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.08em] leading-relaxed font-normal text-center">
               為您整理入住前常見的疑問，<span className="font-handwriting text-warm-gold">希望能幫助您更了解森33-3。</span>
