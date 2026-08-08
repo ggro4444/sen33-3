@@ -42,7 +42,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Navbar */}
       <header
         className={`fixed w-full z-50 transition-all duration-700 ${
-          forceDarkText ? 'bg-warm-bg/95 backdrop-blur-md shadow-sm py-4' : 'bg-gradient-to-b from-black/50 to-transparent py-6'
+          forceDarkText ? 'bg-warm-bg/95 shadow-sm py-4' : 'bg-gradient-to-b from-black/50 to-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -97,7 +97,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         {/* Mobile Nav */}
         <div
           id="mobile-navigation"
-          className={`md:hidden absolute top-full left-0 w-full bg-warm-bg shadow-xl transition-all duration-500 overflow-hidden ${
+          className={`md:hidden absolute top-full left-0 w-full bg-warm-bg shadow-warm-lg transition-all duration-500 overflow-hidden ${
             isMobileMenuOpen ? 'max-h-[600px] border-t border-warm-text/10 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >

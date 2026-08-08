@@ -288,8 +288,8 @@ export const Home: React.FC = () => {
                 const Icon = ATTRACTION_ICONS[attr.id] || MapPin;
                 return (
                   <AnimatedSection key={attr.id} delay={index * 0.08}>
-                    <div className="h-full bg-white/30 border border-warm-gold/20 rounded-md shadow-card p-6 md:p-7 flex flex-col hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out">
-                      <div className="flex items-start justify-between gap-4 mb-4">
+                    <div className="h-full border-t border-warm-text/10 pt-6 md:pt-7 flex flex-col hover:border-warm-gold/40 transition-colors duration-500">
+                      <div className="flex items-start justify-between gap-4 mb-3">
                         <div className="flex items-center gap-2.5 min-w-0">
                           <Icon size={20} strokeWidth={1.5} className="text-warm-gold shrink-0" />
                           <h3 className="font-serif font-semibold text-xl md:text-2xl text-warm-text tracking-[0.1em] leading-snug">{attr.name}</h3>

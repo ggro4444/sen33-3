@@ -95,19 +95,19 @@ export const Plans: React.FC = () => {
             <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em] mb-8">如何訂房？</h2>
             <ol className="space-y-5 text-warm-text/95 text-lg md:text-xl tracking-[0.06em] font-normal mb-10">
               <li className="flex items-center gap-5">
-                <span className="w-9 h-9 rounded-full bg-warm-gold text-white flex items-center justify-center font-semibold text-base shrink-0 shadow-btn">1</span>
+                <span className="w-9 h-9 rounded-full border border-warm-gold/50 text-warm-gold flex items-center justify-center font-semibold text-base shrink-0">1</span>
                 <span className="leading-relaxed">點擊任一方案的「查看此方案價格」，<span className="font-semibold text-warm-text">或直接使用下方「立即訂房」</span></span>
               </li>
               <li className="flex items-center gap-5">
-                <span className="w-9 h-9 rounded-full bg-warm-gold text-white flex items-center justify-center font-semibold text-base shrink-0 shadow-btn">2</span>
+                <span className="w-9 h-9 rounded-full border border-warm-gold/50 text-warm-gold flex items-center justify-center font-semibold text-base shrink-0">2</span>
                 <span className="leading-relaxed">在 BV Trip 訂房頁選擇日期與人數</span>
               </li>
               <li className="flex items-center gap-5">
-                <span className="w-9 h-9 rounded-full bg-warm-gold text-white flex items-center justify-center font-semibold text-base shrink-0 shadow-btn">3</span>
+                <span className="w-9 h-9 rounded-full border border-warm-gold/50 text-warm-gold flex items-center justify-center font-semibold text-base shrink-0">3</span>
                 <span className="leading-relaxed"><span className="font-semibold text-warm-text">記得點「包棟方案」標籤</span>，選擇你想要的方案</span>
               </li>
               <li className="flex items-center gap-5">
-                <span className="w-9 h-9 rounded-full bg-warm-gold text-white flex items-center justify-center font-semibold text-base shrink-0 shadow-btn">4</span>
+                <span className="w-9 h-9 rounded-full border border-warm-gold/50 text-warm-gold flex items-center justify-center font-semibold text-base shrink-0">4</span>
                 <span className="leading-relaxed">完成訂房</span>
               </li>
             </ol>
