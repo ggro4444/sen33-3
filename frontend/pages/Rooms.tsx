@@ -9,8 +9,14 @@ export const Rooms: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <div className="flex flex-col items-center mb-20 md:mb-24">
-            <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">ACCOMMODATION</span>
-            <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">客房介紹</h1>
+            <div className="relative flex flex-col items-center">
+              {/* Stamp decoration — Signature Move S6 */}
+              <div className="absolute -top-10 right-[-4rem] md:right-[-6rem] w-16 h-16 md:w-20 md:h-20 border border-warm-gold/30 rounded-full flex items-center justify-center opacity-40 rotate-12 pointer-events-none hidden md:flex">
+                <span className="font-serif text-[10px] md:text-xs tracking-widest text-warm-gold text-center leading-tight">MORI<br/>33-3</span>
+              </div>
+              <span className="text-warm-gold text-sm tracking-[0.3em] mb-4 uppercase font-medium">ACCOMMODATION</span>
+              <h1 className="font-serif font-semibold text-5xl md:text-6xl text-warm-text tracking-[0.2em] mb-8">客房介紹</h1>
+            </div>
             <div className="w-16 h-[1px] bg-gradient-to-r from-warm-gold/40 via-warm-gold/20 to-transparent mb-8"></div>
             <p className="text-warm-text/90 text-lg md:text-xl tracking-[0.1em] max-w-3xl mx-auto leading-[2] text-center font-normal">
               <span className="block">全棟共四間客房，最多入住 12 人。</span>
@@ -57,7 +63,7 @@ const RoomSection: React.FC<{ room: any; reverse: boolean }> = ({ room, reverse 
                 key={idx}
                 onClick={() => setActiveImg(idx)}
                 className={`relative w-24 md:w-32 aspect-[4/3] shrink-0 overflow-hidden rounded-md transition-all duration-500 ease-out hover:-translate-y-[2px] active:scale-[0.98] ${
-                  activeImg === idx ? 'opacity-100 ring-2 ring-warm-gold/60 ring-offset-4 ring-offset-warm-bg' : 'opacity-60 hover:opacity-100 hover:ring-2 hover:ring-warm-gold/30 hover:ring-offset-2 hover:ring-offset-warm-bg'
+                  activeImg === idx ? 'opacity-100 ring-2 ring-warm-gold/70 ring-offset-2 ring-offset-warm-bg' : 'opacity-55 hover:opacity-95 border border-warm-gold/15'
                 }`}
               >
                 <img src={img} alt={`${room.name} 照片 ${idx + 1}`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
@@ -96,7 +102,9 @@ const RoomSection: React.FC<{ room: any; reverse: boolean }> = ({ room, reverse 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8">
               {room.features.map((feature: string, idx: number) => (
                 <li key={idx} className="flex items-center gap-3 text-base md:text-lg text-warm-text/90 tracking-[0.1em] font-normal">
-                  <div className="w-2 h-2 bg-warm-sage rounded-full shrink-0"></div>
+                  <div className="w-4 h-4 shrink-0 rounded-full border border-warm-gold/40 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 bg-warm-gold rounded-full"></div>
+                  </div>
                   <span>{feature}</span>
                 </li>
               ))}
