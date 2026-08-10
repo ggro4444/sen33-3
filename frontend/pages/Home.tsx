@@ -91,9 +91,9 @@ export const Home: React.FC = () => {
               href={CONTACT_INFO.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-warm-gold text-white rounded-sm tracking-[0.2em] shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out text-2xl md:text-3xl font-serif font-medium w-full sm:w-auto"
+              className="px-10 py-4 bg-warm-gold text-white rounded-sm tracking-[0.2em] shadow-btn hover:shadow-btn-hover hover:-translate-y-[2px] active:scale-[0.98] transition-all duration-500 ease-out text-xl md:text-2xl font-serif font-medium w-full sm:w-auto"
             >
-              立即訂房
+              查看空房
             </a>
 
             <motion.div
