@@ -66,13 +66,15 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
       </button>
       <div
         id={`faq-answer-${question}`}
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? 'max-h-60 opacity-100 mb-8' : 'max-h-0 opacity-0 mb-0'
+        className={`grid transition-all duration-500 ease-in-out ${
+          isOpen ? 'grid-rows-[1fr] opacity-100 mb-8' : 'grid-rows-[0fr] opacity-0 mb-0'
         }`}
       >
-        <p className="text-warm-text/85 text-base md:text-lg tracking-[0.06em] font-normal leading-[2] pl-4 border-l border-warm-gold/40">
-          {answer}
-        </p>
+        <div className="overflow-hidden">
+          <p className="text-warm-text/85 text-base md:text-lg tracking-[0.06em] font-normal leading-[2] pl-4 border-l border-warm-gold/40">
+            {answer}
+          </p>
+        </div>
       </div>
     </div>
   );

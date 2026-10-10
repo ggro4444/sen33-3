@@ -29,7 +29,7 @@ export const Rules: React.FC = () => {
             <div className="bg-warm-bg px-4 py-5"><dt className="text-xl tracking-[0.08em] font-handwriting text-warm-gold">入住</dt><dd className="mt-2 text-lg font-semibold text-warm-text">15:00 起</dd></div>
             <div className="bg-warm-bg px-4 py-5"><dt className="text-xl tracking-[0.08em] font-handwriting text-warm-gold">退房</dt><dd className="mt-2 text-lg font-semibold text-warm-text">11:00 前</dd></div>
             <div className="bg-warm-bg px-4 py-5"><dt className="text-xl tracking-[0.08em] font-handwriting text-warm-gold">靜音</dt><dd className="mt-2 text-lg font-semibold text-warm-text">22:00 後</dd></div>
-            <div className="bg-warm-bg px-4 py-5"><dt className="text-xl tracking-[0.08em] font-handwriting text-warm-gold">押金</dt><dd className="mt-2 text-lg font-semibold text-warm-text">$5,000</dd></div>
+            <div className="bg-warm-bg px-4 py-5"><dt className="text-xl tracking-[0.08em] font-handwriting text-warm-gold">保證金</dt><dd className="mt-2 text-lg font-semibold text-warm-text">$5,000</dd></div>
           </dl>
         </AnimatedSection>
 
@@ -39,7 +39,7 @@ export const Rules: React.FC = () => {
             <div className="border-l-4 border-warm-gold bg-warm-text/5 p-8 md:p-12 rounded-r-md shadow-warm-sm">
               <div className="flex items-center gap-4 mb-10">
                 <AlertCircle className="text-warm-gold" size={32} strokeWidth={1.5} />
-                <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em]">押金與付款</h2>
+                <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em]">付款與保證金</h2>
               </div>
               <ul className="space-y-6 text-warm-text/95 text-lg md:text-xl tracking-[0.06em] font-normal">
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
@@ -47,21 +47,28 @@ export const Rules: React.FC = () => {
                     <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">付款方式</span>
                     <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">PAYMENT</span>
                   </span> 
-                  <span className="leading-relaxed">請於訂房後 24 小時內完成付款，系統才能為您保留房間。若逾時未完成，訂房平台會自動取消訂單</span>
+                  <span className="leading-relaxed">訂房後請依付款通知，於 24 小時內以轉帳方式支付全額房費及另收之 NT$5,000 住宿保證金；逾時未完成付款，訂房平台將自動取消訂單。</span>
                 </li>
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
-                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">押金</span>
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">住宿保證金</span>
                     <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">DEPOSIT</span>
                   </span> 
-                  <span className="leading-relaxed">入住時收取押金 $5,000。</span>
+                  <span className="leading-relaxed">每筆訂房另收 NT$5,000 住宿保證金，於支付房費時一併轉帳；退房確認後，於 3 日內匯款退還。</span>
                 </li>
                 <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
-                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">退還</span>
-                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">REFUND</span>
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">保證金扣抵</span>
+                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">DEDUCTION</span>
                   </span> 
-                  <span className="leading-relaxed">退房後檢查屋內設施無損壞、無違規（如室內抽菸），將於 3 天內退還至指定帳戶。</span>
+                  <span className="leading-relaxed">如有設施損壞或額外清潔、修復費用，將依實際合理費用核實扣抵，並提供明細及退還餘款。</span>
+                </li>
+                <li className="flex flex-col md:flex-row md:gap-8 hover:-translate-y-[2px] transition-all duration-500 ease-out">
+                  <span className="w-52 shrink-0 mb-1 md:mb-0 md:pt-1">
+                    <span className="block text-base font-semibold text-warm-text tracking-[0.1em]">取消訂房</span>
+                    <span className="block text-xs uppercase tracking-widest text-warm-text/50 mt-1">CANCELLATION</span>
+                  </span>
+                  <span className="leading-relaxed">取消訂房且未入住者，住宿保證金全額退還；房費依「取消政策」辦理。</span>
                 </li>
               </ul>
             </div>
@@ -115,7 +122,7 @@ export const Rules: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-4 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-gold mt-2 text-sm">◆</span>
-                  <span className="leading-relaxed">為維護住宿品質，<span className="font-semibold text-warm-text mx-1">不接待寵物</span>入住。</span>
+                  <span className="leading-relaxed">為維護住宿品質，<span className="font-semibold text-warm-text mx-1">不接待寵物</span>入住；依法得進入之合格導盲犬、導聾犬及肢體輔助犬，不在此限。</span>
                 </li>
                 <li className="flex items-start gap-4 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-gold mt-2 text-sm">◆</span>
@@ -123,7 +130,7 @@ export const Rules: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-4 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-gold mt-2 text-sm">◆</span>
-                  <span className="leading-relaxed">晚上 22:00 後請降低音量，避免影響鄰居安寧。</span>
+                  <span className="leading-relaxed">KTV 每日開放至 22:00；22:00 後請降低音量，避免影響鄰居安寧。</span>
                 </li>
                 <li className="flex items-start gap-4 hover:-translate-y-[2px] transition-all duration-500 ease-out">
                   <span className="text-warm-gold mt-2 text-sm">◆</span>
@@ -145,25 +152,29 @@ export const Rules: React.FC = () => {
           <AnimatedSection delay={0.4}>
             <div className="bg-warm-gold/10 border border-warm-gold/30 rounded-md p-8 md:p-12">
               <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em] mb-8">取消政策</h2>
+              <p className="text-lg md:text-xl text-warm-text/95 tracking-[0.08em] leading-relaxed mb-6">
+                本館訂房採預收全額房費；取消退款比例依取消通知送達時間認定，計算基礎為已付房費。
+              </p>
               <div className="overflow-x-auto mb-8">
-                <table className="w-full text-left text-warm-text/90 text-lg md:text-xl tracking-[0.1em] font-normal border-collapse min-w-[500px]">
+                <table className="w-full text-left text-warm-text/90 text-base sm:text-lg md:text-xl tracking-[0.1em] font-normal border-collapse">
                   <thead>
                     <tr className="border-b border-warm-text/20">
-                      <th className="py-4 font-semibold text-warm-text">取消時間</th>
-                      <th className="py-4 font-semibold text-warm-text">退款比例</th>
+                      <th className="py-4 font-semibold text-warm-text">取消訂房時間</th>
+                      <th className="py-4 font-semibold text-warm-text">房費退款比例</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-warm-text/20 hover:-translate-y-[2px] transition-all duration-500 ease-out"><td className="py-4">入住 14 天前</td><td className="py-4">全額退款</td></tr>
-                    <tr className="border-b border-warm-text/20 hover:-translate-y-[2px] transition-all duration-500 ease-out"><td className="py-4">入住 7-13 天前</td><td className="py-4">退款 70%</td></tr>
-                    <tr className="border-b border-warm-text/20 hover:-translate-y-[2px] transition-all duration-500 ease-out"><td className="py-4">入住 3-6 天前</td><td className="py-4">退款 50%</td></tr>
-                    <tr className="border-b border-warm-text/20 hover:-translate-y-[2px] transition-all duration-500 ease-out"><td className="py-4">入住 1-2 天前</td><td className="py-4">退款 30%</td></tr>
-                    <tr className="border-b border-warm-text/20 hover:-translate-y-[2px] transition-all duration-500 ease-out"><td className="py-4">入住當天或未通知</td><td className="py-4 text-warm-text/60">不予退款</td></tr>
+                    <tr className="border-b border-warm-text/20 hover:-translate-y-[2px] transition-all duration-500 ease-out"><td className="py-4">入住日前第 3 日以前</td><td className="py-4">全額退款</td></tr>
+                    <tr className="border-b border-warm-text/20 hover:-translate-y-[2px] transition-all duration-500 ease-out"><td className="py-4">入住日前第 1-2 日</td><td className="py-4">退款 50%</td></tr>
+                    <tr className="border-b border-warm-text/20 hover:-translate-y-[2px] transition-all duration-500 ease-out"><td className="py-4">入住當日或未通知</td><td className="py-4 text-warm-text/60">不予退款</td></tr>
                   </tbody>
                 </table>
               </div>
               <p className="text-base text-warm-text/60 tracking-[0.1em] font-normal leading-relaxed">
-                * 不可抗力因素（如颱風、地震，依政府宣布停班停課為準）：可全額退款或保留訂金延期（限 3 個月內，更改一次為限）。
+                * 以上退款比例僅適用於房費，另收之住宿保證金不納入計算；因不可抗力或其他不可歸責於雙方當事人之事由致無法履行住宿契約時，依相關法規退還已收取之款項。
+              </p>
+              <p className="mt-3 text-base text-warm-text/60 tracking-[0.1em] font-normal leading-relaxed">
+                * 本退款政策適用於依現行條款成立之訂單；既有訂單依其訂房成立時之約定辦理。
               </p>
             </div>
           </AnimatedSection>

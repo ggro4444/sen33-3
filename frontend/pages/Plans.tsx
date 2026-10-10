@@ -46,36 +46,37 @@ export const Plans: React.FC = () => {
       {/* Pricing Logic — 計費邏輯 */}
       <div className="max-w-4xl mx-auto px-6">
         <AnimatedSection delay={0.1}>
-          <div className="border-l-4 border-warm-gold bg-warm-text/5 p-8 md:p-12 rounded-r-md shadow-warm-sm mb-20 md:mb-24">
-            <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em] mb-8">以「開的房間數」計費</h2>
-            <p className="text-warm-text/95 text-lg md:text-xl tracking-[0.06em] leading-relaxed whitespace-pre-line">
-              {`開幾間房、付多少錢，人數在方案範圍內都適用同價，超過上限則無法入住。\n公共空間（客廳、廚房、KTV、庭院）在每個方案中都一樣全棟通用。`}
+          <div className="border-l-4 border-warm-gold bg-warm-text/5 p-8 md:p-12 rounded-r-md shadow-warm-sm mb-14 md:mb-16">
+            <h2 className="font-serif font-semibold text-2xl md:text-4xl text-warm-text tracking-[0.2em] mb-6">包棟方案與客房<br className="md:hidden" />開放說明</h2>
+            <p className="text-warm-text/95 text-lg md:text-xl tracking-[0.06em] leading-relaxed mb-5">
+              本館每日僅接待一組旅客，所有方案均為整棟包棟，公共空間由該組旅客獨享。客房依所選方案開放，未包含的客房不開放使用。
+            </p>
+            <p className="text-warm-text/95 text-lg md:text-xl tracking-[0.06em] leading-relaxed">
+              各方案在適用人數範圍內採同一方案價格，實際費用依入住日期及選擇方案而定。
             </p>
           </div>
         </AnimatedSection>
 
-        {/* Holiday Definition — 公告框 */}
+        {/* Price & Holiday Notice — 房價與假日說明（原「假日定義」＋「春節及特殊節假日公告」合併為單一框） */}
         <AnimatedSection delay={0.15}>
-          <div className="bg-warm-gold/10 border border-warm-gold/30 rounded-md p-8 md:p-10 mb-20 md:mb-24">
-            <h2 className="font-serif font-semibold text-3xl md:text-4xl text-warm-text tracking-[0.2em] mb-6">假日定義</h2>
-            <p className="text-warm-text/95 text-lg md:text-xl tracking-[0.08em] leading-relaxed mb-4">
-              <span className="font-semibold text-warm-text">週六及國定假日當天為假日價</span>，其餘皆為平日價。
-            </p>
-            <p className="text-warm-text/75 text-base md:text-lg tracking-[0.08em] leading-relaxed">
-              「平日限定」方案：週六與國定假日當天不適用。
-            </p>
-          </div>
-        </AnimatedSection>
-
-        {/* Special Holiday Notice — 春節／特殊節假日公告框 */}
-        <AnimatedSection delay={0.18}>
-          <div className="bg-warm-gold/10 border border-warm-gold/30 rounded-md p-8 md:p-10 mb-20 md:mb-24">
-            <h2 className="font-serif font-semibold text-2xl md:text-4xl text-warm-text tracking-[0.2em] mb-6">春節及特殊節假日<br className="md:hidden" />訂房公告</h2>
-            <p className="text-warm-text/95 text-lg md:text-xl tracking-[0.08em] leading-relaxed mb-4">
-              春節及特殊節假日期間，包棟房價與一般假日不同，<span className="font-semibold text-warm-text">網站顯示之房價不適用於上述日期</span>。
-            </p>
-            <p className="text-warm-text/95 text-lg md:text-xl tracking-[0.08em] leading-relaxed">
-              特殊節假日<span className="font-semibold text-warm-text">不開放線上預訂</span>，請先聯繫客服確認實際房價及訂房事宜。
+          <div className="bg-warm-gold/10 border border-warm-gold/30 rounded-md p-7 md:p-9 mb-14 md:mb-16">
+            <h2 className="font-serif font-semibold text-2xl md:text-4xl text-warm-text tracking-[0.2em] mb-5 md:mb-6">房價與假日說明</h2>
+            <dl className="space-y-5 text-warm-text/95 text-lg md:text-xl tracking-[0.08em] leading-relaxed">
+              <div className="flex flex-col md:flex-row md:gap-8">
+                <dt className="shrink-0 md:w-48 mb-1 md:mb-0 font-semibold text-warm-text">平日</dt>
+                <dd>週一至週五及一般週日，不含國定假日、補假日與特殊計價日期。</dd>
+              </div>
+              <div className="flex flex-col md:flex-row md:gap-8">
+                <dt className="shrink-0 md:w-48 mb-1 md:mb-0 font-semibold text-warm-text">一般假日</dt>
+                <dd>週六、國定假日及補假日；特殊計價日期除外。</dd>
+              </div>
+              <div className="flex flex-col md:flex-row md:gap-8">
+                <dt className="shrink-0 md:w-48 mb-1 md:mb-0 font-semibold text-warm-text">春節及特殊節假日</dt>
+                <dd>春節、部分連續假期及其他特殊日期可能另行計價，<span className="font-semibold text-warm-text">不適用訂房系統顯示的一般平、假日價格</span>；特殊計價日期<span className="font-semibold text-warm-text">不開放線上預訂</span>，實際適用日期、房價及房況請於訂房前洽客服確認。</dd>
+              </div>
+            </dl>
+            <p className="mt-5 pt-5 border-t border-warm-gold/20 text-base md:text-lg text-warm-text/75 tracking-[0.08em] leading-relaxed">
+              「平日限定」方案僅適用一般平日。
             </p>
           </div>
         </AnimatedSection>
@@ -97,7 +98,7 @@ export const Plans: React.FC = () => {
               LINE 討論（{CONTACT_INFO.line}）
             </a>
             <p className="mt-6 text-base text-warm-text/70 tracking-[0.08em] leading-relaxed">
-              ※ 特殊調整僅限平日；週六與國定假日當天不適用。
+              ※ 額外開放客房僅限一般平日，實際安排與費用請事先洽 LINE 確認。
             </p>
           </div>
         </AnimatedSection>
@@ -132,7 +133,10 @@ export const Plans: React.FC = () => {
             >
               立即訂房
             </a>
-            <p className="mt-8 text-base text-warm-text/70 tracking-[0.08em] leading-relaxed">
+            <p className="mt-6 text-base text-warm-text/70 tracking-[0.08em] leading-relaxed">
+              春節及特殊節假日房價另計，請先洽客服確認。
+            </p>
+            <p className="mt-3 text-base text-warm-text/70 tracking-[0.08em] leading-relaxed">
               有任何不確定，歡迎 LINE 詢問（{CONTACT_INFO.line}），我們很樂意解答。
             </p>
           </div>

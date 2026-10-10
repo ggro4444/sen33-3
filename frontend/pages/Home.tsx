@@ -74,6 +74,15 @@ export const Home: React.FC = () => {
             4 間房・最多 12 人・可停 4 車・室內電梯・KTV・可開火
           </motion.p>
 
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            className="mt-5 text-lg tracking-[0.08em] font-medium text-[#f5dfb2] [text-shadow:0_1px_3px_rgba(0,0,0,0.95),0_0_10px_rgba(0,0,0,0.85),0_2px_8px_rgba(0,0,0,0.8)]"
+          >
+            春節及特殊節假日房價另計，<br className="sm:hidden" />請先洽客服確認。
+          </motion.p>
+
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
