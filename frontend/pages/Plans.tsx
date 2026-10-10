@@ -67,6 +67,19 @@ export const Plans: React.FC = () => {
           </div>
         </AnimatedSection>
 
+        {/* Special Holiday Notice — 春節／特殊節假日公告框 */}
+        <AnimatedSection delay={0.18}>
+          <div className="bg-warm-gold/10 border border-warm-gold/30 rounded-md p-8 md:p-10 mb-20 md:mb-24">
+            <h2 className="font-serif font-semibold text-2xl md:text-4xl text-warm-text tracking-[0.2em] mb-6">春節及特殊節假日<br className="md:hidden" />訂房公告</h2>
+            <p className="text-warm-text/95 text-lg md:text-xl tracking-[0.08em] leading-relaxed mb-4">
+              春節及特殊節假日期間，包棟房價與一般假日不同，<span className="font-semibold text-warm-text">網站顯示之房價不適用於上述日期</span>。
+            </p>
+            <p className="text-warm-text/95 text-lg md:text-xl tracking-[0.08em] leading-relaxed">
+              特殊節假日<span className="font-semibold text-warm-text">不開放線上預訂</span>，請先聯繫客服確認實際房價及訂房事宜。
+            </p>
+          </div>
+        </AnimatedSection>
+
         {/* LINE Flexibility — 聯絡卡 */}
         <AnimatedSection delay={0.2}>
           <div className="border border-warm-text/15 rounded-md bg-white/30 p-8 md:p-10 mb-20 md:mb-24">
